@@ -4,12 +4,16 @@ import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { logo } from "../assets";
 
+import {motion, useScroll} from 'framer-motion';
+ 
 import MobileMenuToggle from "./MenuToggle";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const {scrollYProgress} = useScroll();
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,6 +38,20 @@ const Navbar = () => {
         scrolled ? "bg-primary backdrop-blur-sm bg-opacity-40" : "bg-transparent"
       }`}
     >
+    <motion.div
+			style={{
+				scaleX: scrollYProgress,
+				position: "fixed",
+				top: 0,
+				right: 0,
+				left: 0,
+				height: 7,
+				background: "#E88C1F",
+				transformOrigin: "0%",
+				zIndex: 1
+			}}
+		>
+		</motion.div>
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <Link
           to="/"
@@ -63,57 +81,12 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-
-        <div className="sm:hidden flex flex-1 justify-end items-center py-3">
-          {/* <button
-            className="text-gray-500 relative mx-6 focus:outline-none"
-            onClick={() => setToggle(!toggle)}
-          >
-            <div className="block absolute grid grid-cols-1 gap-1 content-center w-8 transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2">
-              <span
-                aria-hidden="true"
-                className={`block h-0.5 ${toggle ? "w-8" : "w-6"} bg-gray-100 transform transition-all duration-500 ease-in-out ${
-                  toggle ? "rotate-45 translate-y-1.5" : ""
-                }`}
-              ></span>
-              <span
-                aria-hidden="true"
-                className={`block h-0.5 bg-gray-100 transform transition duration-500 ease-in-out ${
-                  toggle ? "opacity-0" : ""
-                }`}
-              ></span>
-              <span
-                aria-hidden="true"
-                className={`block h-0.5 bg-gray-100 transform transition duration-500 ease-in-out ${
-                  toggle ? "-rotate-45 -translate-y-1.5" : ""
-                }`}
-              ></span>
-            </div>
-          </button> */}
-          <MobileMenuToggle toggle={toggle} setToggle={setToggle} />
-          <div
-            className={`${
-              !toggle ? "hidden" : "flex"
-            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
-          >
-            <ul className="list-none flex justify-end items-start flex-1 flex-col gap-4">
-              {navLinks.map((nav) => (
-                <li
-                  key={nav.id}
-                  className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                    active === nav.title ? "text-white" : "text-secondary"
-                  }`}
-                  onClick={() => {
-                    setToggle(!toggle);
-                    setActive(nav.title);
-                  }}
-                >
-                  <a href={`#${nav.id}`}>{nav.title}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+          <MobileMenuToggle 
+            toggle={toggle} 
+            setToggle={setToggle}
+            active={active}
+            setActive={setActive} 
+          />
       </div>
     </nav>
   );

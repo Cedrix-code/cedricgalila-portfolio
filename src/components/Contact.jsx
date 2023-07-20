@@ -65,10 +65,10 @@ const Contact = () => {
     flex-col-reverse flex gap-10 overflow-hidden">
       <motion.div
         variants={slideIn('left', "tween", 0.2, 1)}
-        className="flex-[0.75] bg-black-100 p-8
+        className="flex-[0.75] bg-primary p-8
         rounded-2xl bg-clip-padding   
         backdrop-filter backdrop-blur-sm 
-        bg-opacity-10 border-gray-100"
+        bg-opacity-30 border-gray-100"
       >
         <p className={styles.sectionSubText}>Get in Touch</p>
         <h3 className={styles.sectionHeadText}>Contact.</h3>

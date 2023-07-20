@@ -5,13 +5,13 @@ import { motion } from 'framer-motion';
 import { styles } from "../styles";
 import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
-import { fadeIn, textVariant } from "../utils/motion";
+import { slideIn, textVariant } from "../utils/motion";
 
 const ServiceCard = ({index, title, icon}) => {
   return (
     <Tilt className="xs:w-[250px] w-full">
       <motion.div
-        variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
+        variants={slideIn("right", "spring", 0.5 * index, 0.75)}
         className='w-full green-pink-gradient 
         p-[1px] rounded-[20px] shadow-card items-center'
       >
@@ -44,7 +44,7 @@ const About = () => {
       </motion.div>
 
       <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
+        variants={slideIn("left", "spring", 0.1, 1)}
         className='mt-4 text-secondary text-[17px]
         max-w-3xl leading-[30px]'
       >
