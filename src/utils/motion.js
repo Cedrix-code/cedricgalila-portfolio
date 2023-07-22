@@ -22,11 +22,13 @@ export const fadeIn = (direction, type, delay, duration) => {
       x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
       y: direction === "up" ? 100 : direction === "down" ? -100 : 0,
       opacity: 0,
+      scale: 0, // Add the scale property with value 0 for the hidden state
     },
     show: {
       x: 0,
       y: 0,
       opacity: 1,
+      scale: 1, // Add the scale property with value 1 for the show state
       transition: {
         type: type,
         delay: delay,

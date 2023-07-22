@@ -1,12 +1,24 @@
-import React, { Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
-import { Decal, Float, OrbitControls, Preload, useTexture,
+import React, { Suspense, useRef, useState } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import {
+  Decal,
+  Float,
+  OrbitControls,
+  Preload,
+  useTexture,
 } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 
 const Ball = (props) => {
   const [decal] = useTexture([props.imgUrl]);
+  const frontFaceRef = useRef();
+  const [rotationY, setRotationY] = useState(0);
+
+  useFrame((state, delta) => {
+    // Update the front face rotation every frame
+    setRotationY((rotationY) => rotationY + delta * 0.1);
+  });
 
   return (
     <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
@@ -15,7 +27,7 @@ const Ball = (props) => {
       <mesh castShadow receiveShadow scale={2.75}>
         <icosahedronGeometry args={[1, 1]} />
         <meshStandardMaterial
-          color='#fff8eb'
+          color="#fff8eb"
           polygonOffset
           polygonOffsetFactor={-5}
           flatShading
@@ -27,6 +39,9 @@ const Ball = (props) => {
           map={decal}
           flatShading
         />
+        {/* Apply rotation to the front face */}
+        <mesh ref={frontFaceRef} rotation-y={rotationY}>
+        </mesh>
       </mesh>
     </Float>
   );
@@ -34,16 +49,11 @@ const Ball = (props) => {
 
 const BallCanvas = ({ icon }) => {
   return (
-    <Canvas
-      frameloop='demand'
-      dpr={[1, 2]}
-      gl={{ preserveDrawingBuffer: true }}
-    >
+    <Canvas frameloop="demand" dpr={[1, 2]} gl={{ preserveDrawingBuffer: true }}>
       <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls enableZoom={false} />
+        <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2} />
         <Ball imgUrl={icon} />
       </Suspense>
-
       <Preload all />
     </Canvas>
   );
