@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 import { fadeIn,textVariant, zoomIn } from "../utils/motion";
@@ -15,13 +14,13 @@ const Hero = () => {
             initial="hidden"
             animate="show"
             variants={zoomIn(1.5, 1)}
-            className='w-5 h-5 rounded-full bg-[#0582CA]' 
+            className='w-5 h-5 rounded-full bg-[#E88C1F]' 
           />
           <motion.div
             initial="hidden"
             animate="show"
             variants={fadeIn("up", "spring", 0.1, 3)}
-            className='w-1 sm:h-80 h-40 skyblue-gradient' 
+            className='w-1 sm:h-80 h-40 orange-gradient' 
           />
         </div>
         <div>
@@ -30,7 +29,7 @@ const Hero = () => {
             animate="show"
             variants={textVariant(0.3)}
             className={`${styles.heroHeadText} text-white`}
-          >Hi, I'm <span className='text-[#0582CA]'>Cedric
+          >Hi, I'm <span className='text-[#E88C1F]'>Cedric
           </span></motion.h1>
           <motion.p
             initial="hidden"

@@ -7,7 +7,6 @@ import {
   html,
   css,
   reactjs,
-  redux,
   tailwind,
   nodejs,
   mongodb,
@@ -17,13 +16,16 @@ import {
   starbucks,
   tesla,
   shopify,
-  carrent,
   jobit,
   tripguide,
   threejs,
   blender,
   mysql,
+  vscode,
+  carrent,
 } from "../assets";
+
+import animationData from "../assets/animation-1.json";
 
 export const navLinks = [
   {
@@ -33,6 +35,14 @@ export const navLinks = [
   {
     id: "work",
     title: "Work",
+  },
+  {
+    id: "tech",
+    title: "Tech",
+  },
+  {
+    id: "projects",
+    title: "Project",
   },
   {
     id: "contact",
@@ -72,17 +82,10 @@ const technologies = [
     name: "JavaScript",
     icon: javascript,
   },
-  // {
-  //   name: "TypeScript",
-  //   icon: typescript,
-  // },
+
   {
     name: "React JS",
     icon: reactjs,
-  },
-  {
-    name: "Redux Toolkit",
-    icon: redux,
   },
   {
     name: "Tailwind CSS",
@@ -116,10 +119,10 @@ const technologies = [
     name: "Blender",
     icon: blender,
   },
-  // {
-  //   name: "docker",
-  //   icon: docker,
-  // },
+  {
+    name: "VS Code",
+    icon: vscode,
+  },
 ];
 
 const experiences = [
@@ -177,36 +180,9 @@ const experiences = [
   },
 ];
 
-const testimonials = [
-  {
-    testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
-  },
-  {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
-  },
-  {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
-  },
-];
-
 const projects = [
   {
-    name: "Car Rent",
+    name: "Portfolio",
     description:
       "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
     tags: [
@@ -223,7 +199,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
+    img: carrent,
     source_code_link: "https://github.com/",
   },
   {
@@ -244,30 +220,30 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
+    img: jobit,
     source_code_link: "https://github.com/",
   },
   {
-    name: "Trip Guide",
+    name: "Coding ideas . . .",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "Upcoming projects are in the works. The developer is busy coding new ideas. <> .. . <div>. ... ... .<section></section>.. .... ... .. ...  .. . ... .</div></> export newProjects(Project)",
     tags: [
       {
-        name: "nextjs",
+        name: "stay",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "tuned",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "for more",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
+    img: {animationData},
     source_code_link: "https://github.com/",
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, technologies, experiences, projects };

@@ -14,12 +14,12 @@ import javascript from "./tech/javascript.png";
 import mongodb from "./tech/mongodb.png";
 import nodejs from "./tech/nodejs.png";
 import reactjs from "./tech/reactjs.png";
-import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.png";
 import blender from "./tech/blender.png";
 import mysql from "./tech/mysql.png";
+import vscode from "./tech/vscode.png"
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
@@ -46,7 +46,6 @@ export {
   mongodb,
   nodejs,
   reactjs,
-  redux,
   tailwind,
   typescript,
   threejs,
@@ -59,4 +58,5 @@ export {
   tripguide,
   blender,
   mysql,
+  vscode,
 };

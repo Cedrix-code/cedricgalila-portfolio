@@ -6,7 +6,7 @@ const MobileMenuToggle = ({ toggle, setToggle, active, setActive }) => {
 
   return (
     
-    <div className="sm:hidden flex flex-1 justify-end items-center mx-4 py-3">
+    <div className="lg:hidden flex flex-1 justify-end items-center mx-4 py-3">
     <button
       className="text-gray-500 relative focus:outline-none"
       onClick={() => setToggle(!toggle)}

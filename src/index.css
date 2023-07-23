@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"); */
+@import url('https://fonts.cdnfonts.com/css/proxima-nova-2');
 
 @tailwind base;
 @tailwind components;
@@ -8,7 +9,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Proxima Nova", sans-serif;
   scroll-behavior: smooth;
   color-scheme: dark;
   scrollbar-width: none;
@@ -24,6 +25,30 @@
   display: block;
 }
 
+body {
+  position: relative;
+	line-height: 1.7;
+	background-image: url('./assets/bg-dirt.png');
+  background-blend-mode: soft-light;
+	min-height: 100%; /* OPTIONAL */
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to right top, #050816, #060d1a, #06121d, #061620, #051923);
+  opacity: 0.7; /* Adjust opacity as needed to control the clipping effect */
+  z-index: -1; /* Place pseudo-element behind the content */
+}
+
+/* .custombg {
+  background-image: linear-gradient(to right top, #050816, #060d1a, #06121d, #061620, #051923);
+} */
+
 .black-gradient {
   background: #000000; /* fallback for old browsers */
   background: -webkit-linear-gradient(
@@ -38,18 +63,14 @@
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.skyblue-gradient {
-  background: #124E78;
-  background: linear-gradient(-90deg, #124E78 0%, rgba(60, 51, 80, 0) 100%);
+.orange-gradient {
+  background: #d8841e;
+  background: linear-gradient(-90deg, #d8841e 0%, rgba(60, 51, 80, 0) 100%);
   background: -webkit-linear-gradient(
     -90deg,
-    #124E78 0%,
+    #d8841e 0%,
     rgba(60, 51, 80, 0) 100%
   );
-}
-
-.custombg {
-  background-image: linear-gradient(to right top, #050816, #060d1a, #06121d, #061620, #051923);
 }
 
 .green-pink-gradient {
@@ -125,7 +146,7 @@
 
 /* canvas- styles */
 .canvas-loader {
-  font-size: 10px;
+  font-size: 8px;
   width: 1em;
   height: 1em;
   border-radius: 50%;

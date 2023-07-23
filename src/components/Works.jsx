@@ -1,6 +1,8 @@
 import { Tilt }  from 'react-tilt';
 import { motion } from 'framer-motion';
 
+import Lottie from 'lottie-react';
+
 import { styles } from '../styles'
 import { github } from '../assets';
 import { SectionWrapper } from '../hoc';
@@ -8,7 +10,9 @@ import { projects } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion';
 
 const ProjectCard = ({index, name, description, 
-  tags, image, source_code_link}) => {
+  tags, img, source_code_link}) => {
+
+  const animationSpeed = 5;
   return (
     <motion.div variants={fadeIn("up", "spring",
     index * 0.5, 0.75)}>
@@ -22,13 +26,15 @@ const ProjectCard = ({index, name, description,
         sm:w-[360px] w-full"
       >
         <div className="relative w-full h-[230px]">
-          <img 
-            src={image}
-            alt={name}
-            className="w-full h-full object-cover
-            rounded-2xl"
-          />
-
+        {img.animationData ? (
+            <Lottie animationData={img.animationData} speed={animationSpeed} className="w-full h-full object-cover rounded-2xl"/>
+          ) : (
+            <img
+              src={img}
+              alt={name}
+              className="w-full h-full object-cover rounded-2xl"
+            />
+          )}
           <div className="absolute inset-0 flex
           justify-end m-3 card-img_hover">
             <div
@@ -104,4 +110,4 @@ const Works = () => {
   );
 };
 
-export default SectionWrapper(Works, "");
+export default SectionWrapper(Works, "projects");
