@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { logo } from "../assets";
@@ -18,7 +18,7 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      if (scrollTop > 100) {
+      if (scrollTop > 50) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -73,11 +73,14 @@ const Navbar = () => {
             <li
               key={nav.id}
               className={`${
-                active === nav.title ? "text-white" : "text-secondary"
+                active === nav.title ? "text-accent" : "text-secondary"
               } hover:text-white text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(nav.title)}
             >
-              <a href={`#${nav.id}`}>{nav.title}</a>
+              <NavLink to={`#${nav.id}`} 
+              onClick={() => window.location.href = `#${nav.id}`} 
+              className={({ isActive }) => isActive ? "active" : ""}>{nav.title}</NavLink>
+              {/* <a href={`#${nav.id}`}>{nav.title}</a> */}
             </li>
           ))}
         </ul>

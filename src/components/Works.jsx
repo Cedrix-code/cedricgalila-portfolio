@@ -12,7 +12,6 @@ import { fadeIn, textVariant } from '../utils/motion';
 const ProjectCard = ({index, name, description, 
   tags, img, source_code_link}) => {
 
-  const animationSpeed = 5;
   return (
     <motion.div variants={fadeIn("up", "spring",
     index * 0.5, 0.75)}>
@@ -27,7 +26,9 @@ const ProjectCard = ({index, name, description,
       >
         <div className="relative w-full h-[230px]">
         {img.animationData ? (
-            <Lottie animationData={img.animationData} speed={animationSpeed} className="w-full h-full object-cover rounded-2xl"/>
+            <div className="w-64 h-64 flex justify-center items-center mx-auto">
+              <Lottie animationData={img.animationData} />
+            </div>
           ) : (
             <img
               src={img}

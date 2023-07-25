@@ -19,6 +19,26 @@
   display: none;
 }
 
+.left-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px; /* Adjust the width as needed */
+  height: 100vh; /* Adjust the height as needed */
+  background-color: #f0f0f0;
+  z-index: 1; /* Set a higher z-index to make it appear on top */
+}
+
+.right-box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%; /* Adjust the width as needed */
+  height: 100vh; /* Adjust the height as needed */
+  background-color: #ccc;
+  z-index: 0; /* Lower z-index to make it appear below the left-box */
+}
+
 .hash-span {
   margin-top: -100px;
   padding-bottom: 100px;
@@ -75,10 +95,10 @@ body::before {
 
 .green-pink-gradient {
   background: "#00cea8";
-  background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
-  background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
+  background: linear-gradient(90.13deg, #00cea8 1.9%, #ce6e00 97.5%);
+  background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #ce6e00 97.5%);
 }
-
+/* 00cea8 */
 .orange-text-gradient {
   background: #f12711; /* fallback for old browsers */
   background: -webkit-linear-gradient(
@@ -146,7 +166,7 @@ body::before {
 
 /* canvas- styles */
 .canvas-loader {
-  font-size: 8px;
+  font-size: 5px;
   width: 1em;
   height: 1em;
   border-radius: 50%;

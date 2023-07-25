@@ -17,7 +17,6 @@ import {
   tesla,
   shopify,
   jobit,
-  tripguide,
   threejs,
   blender,
   mysql,
@@ -25,7 +24,7 @@ import {
   carrent,
 } from "../assets";
 
-import animationData from "../assets/animation-1.json";
+import animationData from "../assets/animation-1.json"
 
 export const navLinks = [
   {
@@ -130,7 +129,7 @@ const experiences = [
     title: "React.js Developer",
     company_name: "Starbucks",
     icon: starbucks,
-    iconBg: "#383E56",
+    iconBg: "#2e373e",
     date: "March 2020 - April 2021",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
@@ -143,7 +142,7 @@ const experiences = [
     title: "React Native Developer",
     company_name: "Tesla",
     icon: tesla,
-    iconBg: "#E6DEDD",
+    iconBg: "#2e373e",
     date: "Jan 2021 - Feb 2022",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
@@ -156,7 +155,7 @@ const experiences = [
     title: "Web Developer",
     company_name: "Shopify",
     icon: shopify,
-    iconBg: "#383E56",
+    iconBg: "#2e373e",
     date: "Jan 2022 - Jan 2023",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
@@ -169,7 +168,7 @@ const experiences = [
     title: "Full stack Developer",
     company_name: "Meta",
     icon: meta,
-    iconBg: "#E6DEDD",
+    iconBg: "#2e373e",
     date: "Jan 2023 - Present",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
@@ -224,9 +223,9 @@ const projects = [
     source_code_link: "https://github.com/",
   },
   {
-    name: "Coding ideas . . .",
+    name: "in Development",
     description:
-      "Upcoming projects are in the works. The developer is busy coding new ideas. <> .. . <div>. ... ... .<section></section>.. .... ... .. ...  .. . ... .</div></> export newProjects(Project)",
+      "Upcoming projects are in the works. The developer is busy coding new ideas. Come back soon to check out new projects. < coffee eat code code code sleep(zzzZZ) repeat >",
     tags: [
       {
         name: "stay",

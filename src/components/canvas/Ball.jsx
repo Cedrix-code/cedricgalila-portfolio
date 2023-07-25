@@ -15,7 +15,7 @@ const Ball = (props) => {
   const frontFaceRef = useRef();
   const [rotationY, setRotationY] = useState(0);
 
-  useFrame((state, delta) => {
+  useFrame((_state, delta) => {
     // Update the front face rotation every frame
     setRotationY((rotationY) => rotationY + delta * 0.1);
   });
