@@ -51,16 +51,14 @@ const About = () => {
         className='mt-4 text-secondary text-[17px]
         max-w-3xl leading-[30px]'
       >
-        Results-driven junior software engineer with 
-        a unique background in the BPO customer 
-        service industry. Transitioning to a career in 
-        software development, bringing strong problem-solving 
-        skills and a customer-centric approach. 
-        Skilled in JavaScript, and knowledgeable in frameworks like
-        React, Node.js, and Three.js. I'm a quick learner and communicates
-        well to create efficient, scalable, and user-friendly solutions
-        that solve real-world problems. Committed to continuous 
-        learning and professional growth in software development. Let's work together and get your ideas to life.
+        I'm a junior software engineer who got lost in the BPO jungle for a while. 
+        I graduated with an IT degree in 2020, but the tech jobs were scarce back in my home province and I had to pay the bills somehow. 
+        So I ended up talking to angry customers on the phone for a living. But I never gave up on my dream of coding cool stuff. 
+        I kept learning JavaScript and its awesome frameworks like React, Node.js, and Three.js. 
+        I can make websites that look good, work fast, and do amazing things. 
+        I'm also good at solving problems and making customers happy. Well, at least the ones who don't yell at me. 
+        I'm ready to switch back to software development and show you what I can do. 
+        I'm always eager to learn new things and grow as a developer.
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10 justify-center'>

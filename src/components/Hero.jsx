@@ -5,8 +5,6 @@ import { fadeIn, textVariant, zoomIn, slideIn } from "../utils/motion";
 import Typewriter from "typewriter-effect";
 import Resume from "../assets/LanceCedricGalila_Resume.pdf";
 
-import FileLines from "../assets/file-lines-regular.svg";
-
 const Hero = () => {
 
   return (
@@ -52,29 +50,25 @@ const Hero = () => {
             className={`${styles.heroSubText} mt-2 text-white-100`}
           >
             The web brought you here! <br className='md:block hidden' />
-            I build, code, visualize ideas. <br className='sm:block hidden' />
+            Building ideas with code. <br className='sm:block hidden' />
             One line at a time.
           </motion.p>
           </div>
-          <div className="hidden lg:flex relative z-20">
+          <div className="relative z-20">
             <a href={Resume} target="_blank" rel="noopener noreferrer">
               <motion.button
                 initial="hidden"
                 animate="show"
                 variants={slideIn("up", "tween", 0.1, 3)}
-                className="bg-tertiary backdrop-opacity-30 
-                backdrop-blur-sm bg-opacity-40 py-3 px-8 outline-none w-fit
-                text-accent font-bold shadow-md rounded-xl my-4
-                hover:bg-accent hover:text-white 
-                border-accent transition-colors border-4"
+                className={`bg-tertiary backdrop-opacity-30 
+                  backdrop-blur-sm bg-opacity-40 py-2 px-6 outline-none w-fit
+                  text-accent font-bold shadow-md rounded-xl my-4
+                  hover:bg-accent hover:text-white 
+                  border-accent transition-colors border-4
+                  md:py-3 md:px-8 md:w-fit`}
               >
                 Resume
               </motion.button>
-              <img
-                src={FileLines}
-                alt="Resume"
-                className="sm:show lg:hidden"
-              />
             </a>
           </div>
         </div>

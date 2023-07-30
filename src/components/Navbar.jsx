@@ -8,7 +8,6 @@ import MobileMenuToggle from './MenuToggle';
 import { useInView } from 'react-intersection-observer';
 import { useNavigate } from 'react-router-dom';
 
-
 const Navbar = () => {
   const [active, setActive] = useState('');
   const [toggle, setToggle] = useState(false);
@@ -91,7 +90,7 @@ const Navbar = () => {
         }}
       ></motion.div>
 
-      <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
+      <div className="w-full flex justify-between justify-center items-center max-w-7xl mx-auto">
         <Link
           to="/home"
           spy={true}

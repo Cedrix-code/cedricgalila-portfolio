@@ -37,7 +37,6 @@ const MobileMenuToggle = ({ toggle, setToggle, active, setActive }) => {
     <motion.div
       initial="hidden"
       animate={toggle ? "show" : "hidden"}
-      exit="exit"
       variants={slideIn("down", "spring", 0.1, 1)}
       className={`${
         !toggle ? "hidden" : "flex"

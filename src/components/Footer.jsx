@@ -1,5 +1,5 @@
 import React from "react";
-import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaGithub, FaCoffee, FaLinkedin  } from "react-icons/fa";
 
 
 import { styles } from "../styles";
@@ -19,8 +19,8 @@ const Footer = () => {
     },
     {
       name: "Instagram",
-      icon: <FaInstagram />,
-      url: "https://www.instagram.com/your-instagram-profile",
+      icon: <FaCoffee />,
+      url: "https://www.buymeacoffee.com/cedrix",
     },
     {
       name: "LinkedIn",
