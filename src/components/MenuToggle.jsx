@@ -1,6 +1,7 @@
 import React from "react";
-
+import { motion } from "framer-motion";
 import { navLinks } from "../constants";
+import { slideIn } from "../utils/motion";
 
 const MobileMenuToggle = ({ toggle, setToggle, active, setActive }) => {
 
@@ -33,29 +34,33 @@ const MobileMenuToggle = ({ toggle, setToggle, active, setActive }) => {
           ></span>
         </div>
     </button>
-      <div
-        className={`${
-          !toggle ? "hidden" : "flex"
-        } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
-      >
-        <ul className="list-none flex justify-end items-start flex-1 flex-col gap-4">
-          {navLinks.map((nav) => (
-            <li
-              key={nav.id}
-              className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                active === nav.title ? "text-white" : "text-secondary"
-              }`}
-              onClick={() => {
-                setToggle(!toggle);
-                setActive(nav.title);
-              }}
-            >
-              <a href={`#${nav.id}`}>{nav.title}</a>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
+    <motion.div
+      initial="hidden"
+      animate={toggle ? "show" : "hidden"}
+      exit="exit"
+      variants={slideIn("down", "spring", 0.1, 1)}
+      className={`${
+        !toggle ? "hidden" : "flex"
+      } p-6 bg-tertiary absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+    >
+      <ul className="list-none flex justify-end items-start flex-1 flex-col gap-4">
+        {navLinks.map((nav) => (
+          <li
+            key={nav.id}
+            className={`font-mono font-medium cursor-pointer text-[16px] ${
+              active === nav.title ? "text-accent" : "text-secondary"
+            }`}
+            onClick={() => {
+              setToggle(!toggle);
+              setActive(nav.title);
+            }}
+          >
+            <a href={`#${nav.id}`}>{nav.title}</a>
+          </li>
+        ))}
+      </ul>
+    </motion.div>
+  </div>
     
   );
 };

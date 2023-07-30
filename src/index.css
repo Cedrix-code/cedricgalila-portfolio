@@ -19,6 +19,11 @@
   display: none;
 }
 
+.drop-shadow{
+  letter-spacing: 3.5px;
+  border-radius: 30%;
+  text-shadow: 6px 8px 0px rgba(0, 0, 0, 1);
+}
 .left-box {
   position: absolute;
   top: 0;
@@ -63,6 +68,11 @@ body::before {
   background: linear-gradient(to right top, #050816, #060d1a, #06121d, #061620, #051923);
   opacity: 0.7; /* Adjust opacity as needed to control the clipping effect */
   z-index: -1; /* Place pseudo-element behind the content */
+}
+
+.lottie-container {
+  background-color: transparent;
+  /* Remove any default background color applied by the library */
 }
 
 /* .custombg {
@@ -171,7 +181,6 @@ body::before {
   height: 1em;
   border-radius: 50%;
   position: relative;
-  text-indent: -9999em;
   animation: mulShdSpin 1.1s infinite ease;
   transform: translateZ(0);
 }

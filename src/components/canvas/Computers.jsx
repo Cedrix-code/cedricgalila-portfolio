@@ -34,7 +34,7 @@ const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
   
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 500px)');
+    const mediaQuery = window.matchMedia('(max-width: 800px)');
 
     setIsMobile(mediaQuery.matches);
 
@@ -53,6 +53,7 @@ const ComputersCanvas = () => {
 
   return (
     <Canvas
+      style={{ position: 'relative', zIndex: 1 }}
       frameloop="demand"
       shadows
       camera={{ position: [40, 3, 5], near: 0.1, far:200, fov: 10 }}

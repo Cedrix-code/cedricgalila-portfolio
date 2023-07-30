@@ -129,10 +129,11 @@ const Contact = () => {
 
           <button
             type="submit"
-            className="bg-accent py-3 px-8
-            outline-none w-fit text-white
-            font-bold shadow-md shadow-slate-900
-            rounded-xl"
+            className="bg-tertiary backdrop-filter 
+                backdrop-blur-sm bg-opacity-30 py-3 px-8 outline-none w-fit
+                text-accent font-bold shadow-md rounded-xl
+                hover:bg-accent hover:text-white 
+                border-accent transition-colors border-4"
           >
             {loading ? 'Sending. . .' : 'Send'}
           </button>

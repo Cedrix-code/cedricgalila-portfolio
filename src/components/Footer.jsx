@@ -1,5 +1,5 @@
 import React from "react";
-import { FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaTrademark } from "react-icons/fa";
+import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 
 import { styles } from "../styles";

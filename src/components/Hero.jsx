@@ -1,9 +1,14 @@
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
-import { fadeIn,textVariant, zoomIn } from "../utils/motion";
+import { fadeIn, textVariant, zoomIn, slideIn } from "../utils/motion";
+import Typewriter from "typewriter-effect";
+import Resume from "../assets/LanceCedricGalila_Resume.pdf";
+
+import FileLines from "../assets/file-lines-regular.svg";
 
 const Hero = () => {
+
   return (
     <section className={`relative w-full h-screen mx-auto`}>
       <div
@@ -28,26 +33,58 @@ const Hero = () => {
             initial="hidden"
             animate="show"
             variants={textVariant(0.3)}
-            className={`${styles.heroHeadText} text-white`}
-          >Hi, I'm <span className='text-[#E88C1F]'>Cedric
+            className={`${styles.heroHeadText} text-white flex items-center gap-4`}
+          >Hi, I'm <span className='text-[#E88C1F] drop-shadow'>
+            <Typewriter
+              options={{
+                strings: ['Lance','Cedric','Galila'],
+                autoStart: true,
+                loop: true,
+                delay: 50,
+              }}
+            />
           </span></motion.h1>
+          <div>
           <motion.p
             initial="hidden"
             animate="show"
             variants={textVariant(0.5)}
             className={`${styles.heroSubText} mt-2 text-white-100`}
           >
-            I develop user interfaces, <br className='sm:block hidden' />
-            visuals and web applications
+            The web brought you here! <br className='md:block hidden' />
+            I build, code, visualize ideas. <br className='sm:block hidden' />
+            One line at a time.
           </motion.p>
+          </div>
+          <div className="hidden lg:flex relative z-20">
+            <a href={Resume} target="_blank" rel="noopener noreferrer">
+              <motion.button
+                initial="hidden"
+                animate="show"
+                variants={slideIn("up", "tween", 0.1, 3)}
+                className="bg-tertiary backdrop-opacity-30 
+                backdrop-blur-sm bg-opacity-40 py-3 px-8 outline-none w-fit
+                text-accent font-bold shadow-md rounded-xl my-4
+                hover:bg-accent hover:text-white 
+                border-accent transition-colors border-4"
+              >
+                Resume
+              </motion.button>
+              <img
+                src={FileLines}
+                alt="Resume"
+                className="sm:show lg:hidden"
+              />
+            </a>
+          </div>
         </div>
       </div>
 
       <ComputersCanvas />
 
-      <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
+      <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center z-20'>
         <a href='#about'>
-          <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>
+          <div className='w-[30px] h-[54px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>
             <motion.div
               animate={{
                 y: [0, 24, 0],
@@ -57,7 +94,7 @@ const Hero = () => {
                 repeat: Infinity,
                 repeatType: "loop",
               }}
-              className='w-3 h-3 rounded-full bg-secondary mb-1'
+              className='w-2 h-2 rounded-full bg-secondary mb-1'
             />
           </div>
         </a>

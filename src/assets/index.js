@@ -1,9 +1,11 @@
 import logo from "./logo.svg";
-import backend from "./backend.png";
-import creator from "./creator.png";
-import mobile from "./mobile.png";
-import web from "./web.png";
+
 import github from "./github.png";
+
+import frontend from "./service.json";
+import api from "./service1.json";
+import backend from "./service2.json";
+import uiux from "./service3.json";
 
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
@@ -21,22 +23,21 @@ import blender from "./tech/blender.png";
 import mysql from "./tech/mysql.png";
 import vscode from "./tech/vscode.png"
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
+import future from "./company/future.png";
+import tcs from "./company/tcs.png";
+import gsu from "./company/gsu.png";
+import guimaras from "./company/guimaras.png";
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import portfolio from "./portfolio.png";
+import gtip from "./gtip.png";
 
 export {
   logo,
-  backend,
-  creator,
-  mobile,
-  web,
   github,
+  frontend,
+  api,
+  backend,
+  uiux,
   css,
   docker,
   figma,
@@ -49,13 +50,12 @@ export {
   tailwind,
   typescript,
   threejs,
-  meta,
-  shopify,
-  starbucks,
-  tesla,
-  carrent,
-  jobit,
-  tripguide,
+  future,
+  tcs,
+  gsu,
+  guimaras,
+  portfolio,
+  gtip,
   blender,
   mysql,
   vscode,

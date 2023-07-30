@@ -1,6 +1,8 @@
-import React from 'react';
-import { Tilt }  from 'react-tilt';
-import { motion } from 'framer-motion';
+import React from "react";
+import { Tilt }  from "react-tilt";
+import { motion } from "framer-motion";
+
+import Lottie from "lottie-react";
 
 import { styles } from "../styles";
 import { services } from "../constants";
@@ -25,8 +27,9 @@ const ServiceCard = ({index, title, icon}) => {
           py-5 px-12 min-h-[280px] 
           flex justify-evenly items-center flex-col'
         >
-          <img src={icon} alt={title} 
-          className="w-16 h-16 object-contain" />
+            <div className="flex justify-center items-center mx-auto">
+              <Lottie animationData={icon} />
+            </div>
           <h3 className="text-white text-[20px]
           font-bold text-center">{title}</h3>
         </div>
@@ -39,7 +42,7 @@ const About = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Introduction</p>
+        <p className={styles.sectionSubText}>Introduction & Summary</p>
         <h2 className={styles.sectionHeadText}>Overview.</h2>
       </motion.div>
 
