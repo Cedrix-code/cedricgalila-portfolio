@@ -54,8 +54,7 @@ const About = () => {
         I'm a junior software engineer who got lost in the BPO jungle for a while. 
         I graduated with an IT degree in 2020, but the tech jobs were scarce back in my home province and I had to pay the bills somehow. 
         So I ended up talking to angry customers on the phone for a living. But I never gave up on my dream of coding cool stuff. 
-        I kept learning JavaScript and its awesome frameworks like React, Node.js, and Three.js. 
-        I can make websites that look good, work fast, and do amazing things. 
+        I kept learning Web Development and JavaScript and its awesome frameworks like React, Node.js, and Three.js. 
         I'm also good at solving problems and making customers happy. Well, at least the ones who don't yell at me. 
         I'm ready to switch back to software development and show you what I can do. 
         I'm always eager to learn new things and grow as a developer.

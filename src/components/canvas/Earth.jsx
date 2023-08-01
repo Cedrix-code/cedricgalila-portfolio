@@ -1,11 +1,16 @@
-import React, { Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
+import React, { Suspense, useEffect, useState, useRef } from "react";
+import { Canvas, useThree } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 
-const Earth = () => {
+import useGLTFUnmount from "./useGLTFUnmount"; // Import the hook from the separate file
+
+const Earth = ({ isVisible }) => {
   const earth = useGLTF("./planet/scene.gltf");
+  const { gl } = useThree(); // Get the gl instance from useThree
+
+  useGLTFUnmount(isVisible, gl); // Call the hook directly here
 
   return (
     <mesh>
@@ -28,31 +33,74 @@ const Earth = () => {
 };
 
 const EarthCanvas = () => {
-  return (
-    <Canvas
-      shadows
-      frameloop="demand"
-      dpr={[1, 2]}
-      gl={{ preserveDrawingBuffer: true }}
-      camera={{
-        fov: 45,
-        near: 0.1,
-        far: 200,
-        position: [-4, 3, 6],
-      }}
-    >
-      <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls
-          autoRotate
-          enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
-        />
-        <Earth />
+  const [isMobile, setIsMobile] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const canvasRef = useRef();
 
-        <Preload all />
-      </Suspense>
-    </Canvas>
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 800px)');
+    setIsMobile(mediaQuery.matches);
+
+    const handleMediaQueryChange = (event) => {
+      setIsMobile(event.matches);
+    };
+
+    mediaQuery.addEventListener('change', handleMediaQueryChange);
+
+    // Intersection Observer to detect visibility
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      });
+    }, options);
+
+    observer.observe(canvasRef.current);
+
+    return () => {
+      mediaQuery.removeEventListener('change', handleMediaQueryChange);
+      observer.unobserve(canvasRef.current);
+    };
+  }, []);
+
+  return (
+    <div ref={canvasRef} 
+    style={{ position: 'relative', width: '100%', height: '100%', overflow: 'hidden' }}>
+      {isVisible && (
+        <Canvas
+          shadows
+          frameloop="demand"
+          dpr={[1, 2]}
+          gl={{ preserveDrawingBuffer: true }}
+          camera={{
+            fov: 45,
+            near: 0.1,
+            far: 200,
+            position: [-4, 3, 6],
+          }}
+        >
+          <Suspense fallback={<CanvasLoader />}>
+            <OrbitControls
+              autoRotate
+              enableZoom={false}
+              maxPolarAngle={Math.PI / 2}
+              minPolarAngle={Math.PI / 2}
+            />
+            <Earth isMobile={isMobile} isVisible={isVisible} />
+          </Suspense>
+            <Preload all />
+        </Canvas>
+      )}
+    </div>
   );
 };
 

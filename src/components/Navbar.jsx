@@ -55,7 +55,7 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      if (scrollTop > 80) {
+      if (scrollTop > 30) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -64,7 +64,7 @@ const Navbar = () => {
 
     window.addEventListener('scroll', handleScroll);
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll, { passive: true });
   }, []);
 
   return (
