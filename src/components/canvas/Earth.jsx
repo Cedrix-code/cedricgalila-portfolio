@@ -6,9 +6,10 @@ import CanvasLoader from "../Loader";
 
 import useGLTFUnmount from "./GLTFUnmount"; // Import the hook from the separate file
 
-const Earth = ({ isVisible }) => {
+const Earth = ({ isMobile, isVisible }) => {
   const earth = useGLTF("./planet/scene.gltf");
   const { gl } = useThree(); // Get the gl instance from useThree
+  const scale = isVisible ? (isMobile ? 0.5 : 0.4) : 0; // Scale to 0 when not visible
 
   useGLTFUnmount(isVisible, gl); // Call the hook directly here
 
@@ -25,7 +26,7 @@ const Earth = ({ isVisible }) => {
         shadow-mapSize={1024}
       />
       <primitive object={earth.scene} 
-      scale={0.4} position-y={0} 
+      scale={scale} position-y={0} 
       rotation-y={0} 
       />
     </mesh>

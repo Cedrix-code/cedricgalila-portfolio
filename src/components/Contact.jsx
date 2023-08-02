@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 
@@ -19,6 +19,9 @@ const Contact = () => {
     message: '',
   });
   const [loading, setLoading] = useState(false);
+  const [isFormTouched, setIsFormTouched] = useState(false);
+  const [showWarning, setShowWarning] = useState(false); // New state variable for showing the warning
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,6 +32,13 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
+
+    if (!isValidEmail(form.email) || isFormEmpty) {
+      // Show a warning if the email is not valid
+      setShowWarning(true);
+      setLoading(false);
+      return;
+    }
 
     emailjs.send(
       'service_zlh5dkh',
@@ -50,15 +60,23 @@ const Contact = () => {
         name: '',
         email: '',
         message: '',
-      })
-    }, (error) => {
-      setLoading(false)
-
-      console.log(error);
-
-      alert('Something went wrong. Contact me directly on my email if you see this.')
+      });
     })
-  }
+    .catch((error) => {
+      setLoading(false);
+      console.log(error);
+      alert('Something went wrong. Contact me directly on my email if you see this.');
+    });
+  };
+
+  const isValidEmail = (email) => {
+    // Regex pattern for email validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
+  };
+
+  const isFormEmpty = Object.values(form).some((value) => value.trim() === '');
+  const isButtonDisabled = isFormEmpty && isFormTouched; // Button is disabled only when the form is empty and user has touched it
 
   return (
     <div className="xl:mt-12 xl:flex-row
@@ -127,17 +145,36 @@ const Contact = () => {
             />
           </label>
 
+          <div className="flex items-center gap-2">
           <button
             type="submit"
-                className={`bg-tertiary backdrop-opacity-30 
-                  backdrop-blur-sm bg-opacity-40 py-2 px-6 outline-none w-fit
-                  text-accent font-bold shadow-md rounded-xl my-4
-                  hover:bg-accent hover:text-white 
-                  border-accent transition-colors border-4
-                  md:py-3 md:px-8 md:w-fit`}
+            className={`bg-tertiary backdrop-opacity-30 
+              backdrop-blur-sm bg-opacity-40 py-2 px-6 mx-2 outline-none w-fit
+              text-accent font-bold shadow-md rounded-xl my-4
+              hover:bg-accent hover:text-white 
+              border-accent transition-colors border-4
+              md:py-3 md:px-8 md:w-fit ${
+                (isButtonDisabled || (isFormTouched && !isValidEmail(form.email))) ? 'bg-red-600 hover:bg-red-600 border-red-600 cursor-not-allowed' : ''
+              }`}
+            disabled={isButtonDisabled || (isFormTouched && !isValidEmail(form.email))}
+            onClick={() => {
+              setIsFormTouched(true); // Mark the form as touched when the button is clicked
+              setShowWarning(true); // Hide the warning on button click
+            }}
           >
             {loading ? 'Sending. . .' : 'Send'}
           </button>
+          {showWarning && !isValidEmail(form.email) && (
+            <p className="text-red-500 text-sm mt-2">Please enter a valid email address.</p>
+          )}
+
+          {showWarning && isFormEmpty && (
+            <p className="text-red-500 text-sm mt-2">
+              Please fill in all the fields before submitting.
+            </p>
+          )}
+          </div>
+
         </form>
       </motion.div>
 
