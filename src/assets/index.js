@@ -1,11 +1,14 @@
 import logo from "./logo.svg";
 
 import github from "./github.png";
+import sitelink from "./sitelink.png";
 
 import frontend from "./service.json";
 import api from "./service1.json";
 import backend from "./service2.json";
 import uiux from "./service3.json";
+
+import indev from "./animation-1.json";
 
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
@@ -30,14 +33,18 @@ import guimaras from "./company/guimaras.png";
 
 import portfolio from "./portfolio.png";
 import gtip from "./gtip.png";
+import netflux from "./netflux.png";
+import engjap from "./engjap.png";
 
 export {
   logo,
   github,
+  sitelink,
   frontend,
   api,
   backend,
   uiux,
+  indev,
   css,
   docker,
   figma,
@@ -50,13 +57,15 @@ export {
   tailwind,
   typescript,
   threejs,
+  mysql,
+  vscode,
+  blender,
   future,
   tcs,
   gsu,
   guimaras,
   portfolio,
   gtip,
-  blender,
-  mysql,
-  vscode,
+  netflux,
+  engjap,
 };

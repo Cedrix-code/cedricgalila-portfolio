@@ -19,9 +19,6 @@ const Tech = () => {
   const handleMouseLeave = () => {
     setIsHovering(false);
     // Set a delay before closing the modal
-    hoverTimeoutRef.current = setTimeout(() => {
-      handleCloseModal();
-    }, 500); // Adjust the delay duration (in milliseconds) as needed
   };
   // Function to open the modal when a technology is clicked
   const handleTechClick = (technology) => {

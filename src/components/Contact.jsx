@@ -44,7 +44,7 @@ const Contact = () => {
     )
     .then(() => {
       setLoading(false);
-      alert('Thank you, I will get back to you as soon as possible.');
+      alert('Thank you, I will get back to you as soon as possible. Ciao!');
 
       setForm({
         name: '',
@@ -56,7 +56,7 @@ const Contact = () => {
 
       console.log(error);
 
-      alert('Something went wrong.')
+      alert('Something went wrong. Contact me directly on my email if you see this.')
     })
   }
 
@@ -80,13 +80,13 @@ const Contact = () => {
         >
           <label className="flex flex-col">
             <span className="text-white
-            font-medium mb-4">Your name</span>
+            font-medium mb-4">Full Name</span>
             <input 
               type="text"
               name="name"
               value={form.name}
               onChange={handleChange}
-              placeholder="What's your name?"
+              placeholder="Your name goes here!"
               className="bg-tertiary py-4 px-6
               placeholder:text-secondary
               text-white rounded-lg outlined-none
@@ -96,13 +96,13 @@ const Contact = () => {
           </label>
           <label className="flex flex-col">
             <span className="text-white
-            font-medium mb-4">Your Email</span>
+            font-medium mb-4">Email address</span>
             <input 
               type="email"
               name="email"
               value={form.email}
               onChange={handleChange}
-              placeholder="What's your email?"
+              placeholder="Leave your email here!"
               className="bg-tertiary py-4 px-6
               placeholder:text-secondary
               text-white rounded-lg outlined-none
@@ -112,13 +112,13 @@ const Contact = () => {
           </label>
           <label className="flex flex-col">
             <span className="text-white
-            font-medium mb-4">Your message</span>
+            font-medium mb-4">Message</span>
             <textarea
               rows="7"
               name="message"
               value={form.message}
               onChange={handleChange}
-              placeholder="What do you want to say?"
+              placeholder="Hit me up with a message"
               className="bg-tertiary py-4 px-6
               placeholder:text-secondary
               text-white rounded-lg outline-none

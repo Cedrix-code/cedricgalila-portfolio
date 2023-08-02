@@ -1,8 +1,6 @@
 import React from "react";
 import { FaFacebook, FaGithub, FaCoffee, FaLinkedin  } from "react-icons/fa";
 
-
-import { styles } from "../styles";
 import { logo } from "../assets";
 
 const Footer = () => {
@@ -30,7 +28,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className={styles.footer}>
+    <footer>
       <div className="container mx-auto flex flex-col items-center justify-center py-8">
         {/* Your Logo */}
         <img

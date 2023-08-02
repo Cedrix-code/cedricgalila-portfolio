@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const useGLTFUnmount = (isVisible, gltfObject) => {
+const GLTFUnmount = (isVisible, gltfObject, fallbackEvent) => {
   const [isMobileVisible, setMobileVisible] = useState(false);
 
   useEffect(() => {
@@ -20,10 +20,15 @@ const useGLTFUnmount = (isVisible, gltfObject) => {
     // Unmount the GLTF object when it's no longer visible
     if (!isVisible && !isMobileVisible) {
       unloadGLTF();
+
+      // Trigger the fallback event when the GLTF object is not visible
+      if (typeof fallbackEvent === 'function') {
+        fallbackEvent();
+      }
     }
 
     return unloadGLTF; // Returning the cleanup function
-  }, [isVisible, isMobileVisible, gltfObject]);
+  }, [isVisible, isMobileVisible, gltfObject, fallbackEvent]);
 
   useEffect(() => {
     // Intersection Observer to detect visibility on mobile view
@@ -47,4 +52,4 @@ const useGLTFUnmount = (isVisible, gltfObject) => {
   }, [isVisible]);
 };
 
-export default useGLTFUnmount;
+export default GLTFUnmount;

@@ -3,15 +3,16 @@ import { motion } from 'framer-motion';
 
 import Lottie from 'lottie-react';
 
-import { styles } from '../styles'
-import { github } from '../assets';
+import { styles } from '../styles';
+import { github, sitelink } from '../assets';
 import { SectionWrapper } from '../hoc';
 import { projects } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion';
 
 const ProjectCard = ({index, name, description, 
-  tags, img, source_code_link}) => {
+  tags, img, source_code_link, site_link}) => {
 
+  
   return (
     <motion.div variants={fadeIn("up", "spring",
     index * 0.5, 0.75)}>
@@ -25,9 +26,9 @@ const ProjectCard = ({index, name, description,
         sm:w-[360px] w-full"
       >
         <div className="relative w-full h-[230px]">
-        {img.animationData ? (
+        {img.indev ? (
             <div className="w-64 h-64 flex justify-center items-center mx-auto">
-              <Lottie animationData={img.animationData} />
+              <Lottie animationData={img.indev} />
             </div>
           ) : (
             <img
@@ -36,22 +37,58 @@ const ProjectCard = ({index, name, description,
               className="w-full h-full object-cover rounded-2xl"
             />
           )}
-          <div className="absolute inset-0 flex
+          <div className="absolute flex gap-2 inset-0 flex
           justify-end m-3 card-img_hover">
-            <div
-              onClick={() => window.open
-              (source_code_link, "_blank")}
-              className="black-gradient w-10 h-10
-              rounded-full flex justify-center
-              items-center cursor-pointer"
-            >
-              <img 
-                src={github}
-                alt="github"
-                className="w-1/2 h-1/2
-                object-contain"
-              />
-            </div>
+            {site_link ? (
+              <>
+              <div
+                onClick={() => window.open
+                (source_code_link, "_blank")}
+                className="bg-primary backdrop-blur-sm 
+                bg-opacity-70 hover:bg-accent w-10 h-10
+                rounded-full flex justify-center
+                items-center cursor-pointer"
+              >
+                <img 
+                  src={github}
+                  alt="github"
+                  className="w-1/2 h-1/2
+                  object-contain"
+                />
+              </div>
+              <div
+                onClick={() => window.open(site_link, "_blank")}
+                className="bg-primary backdrop-blur-sm 
+                bg-opacity-70 hover:bg-accent w-10 h-10 
+                rounded-full flex justify-center 
+                items-center cursor-pointer"
+              >
+                <img 
+                  src={sitelink}
+                  alt="github"
+                  className="w-1/2 
+                  h-1/2 
+                  object-contain"
+                />
+              </div>
+              </>
+              ) : (
+              <div
+                onClick={() => window.open
+                (source_code_link, "_blank")}
+                className="bg-primary backdrop-blur-sm 
+                bg-opacity-70 hover:bg-accent w-10 h-10
+                rounded-full flex justify-center
+                items-center cursor-pointer"
+              >
+                <img 
+                  src={github}
+                  alt="github"
+                  className="w-1/2 h-1/2
+                  object-contain"
+                />
+              </div>
+            )}
           </div>
         </div>
 

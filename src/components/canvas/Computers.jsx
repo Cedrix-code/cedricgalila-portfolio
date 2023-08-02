@@ -4,7 +4,7 @@
 
   import CanvasLoader from '../Loader';
 
-  import useGLTFUnmount from './useGLTFUnmount'; // Import the hook from the separate file
+  import useGLTFUnmount from './GLTFUnmount'; // Import the hook from the separate file
 
   const Computers = ({ isMobile, isVisible }) => {
     const computer = useGLTF('../desktop_pc/scene.gltf')

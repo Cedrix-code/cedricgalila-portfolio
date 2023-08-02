@@ -4,7 +4,7 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 
-import useGLTFUnmount from "./useGLTFUnmount"; // Import the hook from the separate file
+import useGLTFUnmount from "./GLTFUnmount"; // Import the hook from the separate file
 
 const Earth = ({ isVisible }) => {
   const earth = useGLTF("./planet/scene.gltf");

@@ -7,7 +7,7 @@ import Lottie from "lottie-react";
 import { styles } from "../styles";
 import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
-import { fadeIn, textVariant } from "../utils/motion";
+import { fadeIn, slideIn, textVariant } from "../utils/motion";
 
 const ServiceCard = ({index, title, icon}) => {
   return (
@@ -47,7 +47,7 @@ const About = () => {
       </motion.div>
 
       <motion.p
-        variants={fadeIn("left", "spring", 0.1, 1)}
+        variants={slideIn("left", "spring", 0.1, 1)}
         className='mt-4 text-secondary text-[17px]
         max-w-3xl leading-[30px]'
       >
@@ -57,7 +57,8 @@ const About = () => {
         I kept learning Web Development and JavaScript and its awesome frameworks like React, Node.js, and Three.js. 
         I'm also good at solving problems and making customers happy. Well, at least the ones who don't yell at me. 
         I'm ready to switch back to software development and show you what I can do. 
-        I'm always eager to learn new things and grow as a developer.
+        I'll be happy dipping myself with other like-minded people who are already experienced in the field.
+        I'm always eager to learn new things and grow as a developer. 
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10 justify-center'>

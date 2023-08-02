@@ -3,6 +3,7 @@ import {
   backend,
   api,
   uiux,
+  indev,
   javascript,
   html,
   css,
@@ -17,14 +18,14 @@ import {
   guimaras,
   tcs,
   gtip,
+  netflux,
+  engjap,
   threejs,
   blender,
   mysql,
   vscode,
   portfolio,
 } from "../assets";
-
-import animationData from "../assets/animation-1.json"
 
 export const navLinks = [
   {
@@ -210,7 +211,7 @@ const projects = [
     tags: [
       {
         name: "react",
-        color: "blue-text-gradient",
+        color: "orange-text-gradient",
       },
       {
         name: "framer",
@@ -222,7 +223,8 @@ const projects = [
       },
     ],
     img: portfolio,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/Cedrix-code/cedricgalila-portfolio",
+    site_link: "https://cedricgalila.netlify.app/",
   },
   {
     name: "G-Tip",
@@ -231,9 +233,9 @@ const projects = [
     tags: [
       {
         name: "html",
-        color: "blue-text-gradient",
+        color: "orange-text-gradient",
       },
-      {
+      { 
         name: "php",
         color: "green-text-gradient",
       },
@@ -243,7 +245,50 @@ const projects = [
       },
     ],
     img: gtip,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/Cedrix-code",
+  },
+  {
+    name: "Netflux",
+    description:
+      "Simple side project to practice HTML, JavaScript, and CSS. Also implemented the use of API, specifically TMDb API to fetch movie datas. I learned different React hooks doing this project.",
+    tags: [
+      {
+        name: "html",
+        color: "orange-text-gradient",
+      },
+      { 
+        name: "javascript",
+        color: "green-text-gradient",
+      },
+      {
+        name: "css",
+        color: "pink-text-gradient",
+      },
+    ],
+    img: netflux,
+    source_code_link: "https://github.com/Cedrix-code",
+    site_link: "https://netflux-react.netlify.app/",
+  },
+  {
+    name: "Speech Translator",
+    description:
+      "Simple English to Japanese Speech Translator built with Python, Google Text-to-Speech, and Playsound. Worked on this simple side project to hone my skills and get a dip on other programming language.",
+    tags: [
+      {
+        name: "python",
+        color: "orange-text-gradient",
+      },
+      { 
+        name: "gtts",
+        color: "green-text-gradient",
+      },
+      {
+        name: "playsound",
+        color: "pink-text-gradient",
+      },
+    ],
+    img: engjap,
+    source_code_link: "https://github.com/Cedrix-code/japanese-translate-python",
   },
   {
     name: "in Development",
@@ -252,9 +297,10 @@ const projects = [
     tags: [
       {
         name: "stay",
-        color: "blue-text-gradient",
+        color: "orange-text-gradient",
       },
       {
+
         name: "tuned",
         color: "green-text-gradient",
       },
@@ -263,8 +309,8 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    img: {animationData},
-    source_code_link: "https://github.com/",
+    img: {indev},
+    source_code_link: "https://github.com/Cedrix-code",
   },
 ];
 

@@ -4,7 +4,7 @@ import { Points, PointMaterial, Preload } from "@react-three/drei";
 // @ts-ignore
 import * as random from "maath/random/dist/maath-random.esm";
 
-import useGLTFUnmount from './useGLTFUnmount'; // Import the hook from the separate file
+import useGLTFUnmount from './GLTFUnmount'; // Import the hook from the separate file
 
 const Stars = (props) => {
   const ref = useRef();

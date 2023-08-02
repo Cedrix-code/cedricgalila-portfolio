@@ -10,7 +10,7 @@ import {
 
 import CanvasLoader from '../Loader';
 
-import useGLTFUnmount from './useGLTFUnmount'; // Import the hook from the separate file
+import useGLTFUnmount from './GLTFUnmount'; // Import the hook from the separate file
 
 const Ball = ({ imgUrl, isVisible }) => {
   const [decal] = useTexture([imgUrl]);
@@ -55,10 +55,6 @@ const BallCanvas = ({ icon }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const canvasRef = useRef();
-  
-  const handleContextRestored = () => {
-    setIsContextLost(false);
-  };
   
   useEffect(() => {
     const mediaQuery = window.matchMedia('(max-width: 800px)');
@@ -108,7 +104,7 @@ const BallCanvas = ({ icon }) => {
           visible={isVisible} // Hide/show the canvas based on isVisible state
         >
           <Suspense fallback={<CanvasLoader />}>
-            <OrbitControls enableZoom={!isMobile} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2} />
+            <OrbitControls enableZoom={false} enabled={!isMobile} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2} />
               {isVisible ? (
                 <Ball imgUrl={icon} isVisible={isVisible} />
               ) : (
