@@ -154,7 +154,7 @@ const Contact = () => {
               hover:bg-accent hover:text-white 
               border-accent transition-colors border-4
               md:py-3 md:px-8 md:w-fit ${
-                (isButtonDisabled || (isFormTouched && !isValidEmail(form.email))) ? 'bg-red-600 hover:bg-red-600 border-red-600 cursor-not-allowed' : ''
+                (isButtonDisabled || (isFormTouched && !isValidEmail(form.email))) ? 'bg-red-600 text-red-600 hover:bg-red-600 border-red-600 cursor-not-allowed' : ''
               }`}
             disabled={isButtonDisabled || (isFormTouched && !isValidEmail(form.email))}
             onClick={() => {
