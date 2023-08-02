@@ -49,7 +49,7 @@ const Hero = () => {
             variants={textVariant(0.5)}
             className={`${styles.heroSubText} mt-2 text-white-100`}
           >
-            The web brought you here! <br className='md:block hidden' />
+            The web brought you here. Finally! <br className='md:block hidden' />
             Building ideas with code. <br className='sm:block hidden' />
             One line at a time.
           </motion.p>
