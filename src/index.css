@@ -103,14 +103,14 @@ body::before {
   );
 }
 
-.green-pink-gradient {
-  background: "#00cea8";
+.green-orange-gradient {
+  background: #ce6e00;
   background: linear-gradient(90.13deg, #00cea8 1.9%, #ce6e00 97.5%);
   background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #ce6e00 97.5%);
 }
 /* 00cea8 */
 .orange-text-gradient {
-  background: #f12711; /* fallback for old browsers */
+  background: #f5af19; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to top,
     #f12711,
@@ -126,7 +126,7 @@ body::before {
 }
 
 .green-text-gradient {
-  background: #11998e; /* fallback for old browsers */
+  background: #38ef7d; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to top,
     #f1cf11,
@@ -158,8 +158,8 @@ body::before {
   -webkit-text-fill-color: transparent;
 }
 
-.pink-text-gradient {
-  background: #ec008c; /* fallback for old browsers */
+.yellow-text-gradient {
+  background: #a5ec00; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to top,
     #e8ec00,

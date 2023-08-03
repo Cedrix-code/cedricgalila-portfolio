@@ -219,7 +219,7 @@ const projects = [
       },
       {
         name: "tailwind",
-        color: "pink-text-gradient",
+        color: "yellow-text-gradient",
       },
     ],
     img: portfolio,
@@ -241,7 +241,7 @@ const projects = [
       },
       {
         name: "css",
-        color: "pink-text-gradient",
+        color: "yellow-text-gradient",
       },
     ],
     img: gtip,
@@ -262,7 +262,7 @@ const projects = [
       },
       {
         name: "css",
-        color: "pink-text-gradient",
+        color: "yellow-text-gradient",
       },
     ],
     img: netflux,
@@ -284,7 +284,7 @@ const projects = [
       },
       {
         name: "playsound",
-        color: "pink-text-gradient",
+        color: "yellow-text-gradient",
       },
     ],
     img: engjap,
@@ -306,7 +306,7 @@ const projects = [
       },
       {
         name: "for more",
-        color: "pink-text-gradient",
+        color: "yellow-text-gradient",
       },
     ],
     img: {indev},

@@ -14,7 +14,7 @@ const ServiceCard = ({index, title, icon}) => {
     <Tilt className="xs:w-[250px] w-full">
       <motion.div
         variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
-        className='w-full green-pink-gradient 
+        className='w-full green-orange-gradient 
         p-[1px] rounded-[20px] shadow-card items-center'
       >
         <div
@@ -57,6 +57,8 @@ const About = () => {
         I kept learning Web Development and JavaScript and its awesome frameworks like React, Node.js, and Three.js. 
         I'm also good at solving problems and making customers happy. Well, at least the ones who don't yell at me. 
         I'm ready to switch back to software development and show you what I can do. 
+        Let's say I'm more leaned towards Frontend as of this time, but I am constantly learning and eventually would delved deep into other 
+        aspects of Software Development like Backend, DevOps, CI/CD, and so on. And hopefully by then I am confident with my Full-stack skills.
         I'll be happy dipping myself with other like-minded people who are already experienced in the field.
         I'm always eager to learn new things and grow as a developer. 
       </motion.p>
