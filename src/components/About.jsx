@@ -7,7 +7,7 @@ import Lottie from "lottie-react";
 import { styles } from "../styles";
 import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
-import { fadeIn, slideIn, textVariant } from "../utils/motion";
+import { fadeIn, textVariant } from "../utils/motion";
 
 const ServiceCard = ({index, title, icon}) => {
   const [isMobile, setIsMobile] = useState(false);
@@ -46,7 +46,7 @@ const ServiceCard = ({index, title, icon}) => {
   return (
     <Tilt className="xs:w-[250px] w-full">
       <motion.div
-        variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
+        variants={fadeIn("right", "spring", 0.3 * index, 0.75)}
         className={`w-full p-[1px] rounded-[20px] shadow-card items-center ${
           isHovering && !isMobile || isMobile ? 'green-orange-gradient' : ''
         }`}
@@ -83,7 +83,7 @@ const About = () => {
       </motion.div>
 
       <motion.p
-        variants={slideIn("left", "spring", 0.1, 1)}
+        variants={textVariant(0.3)}
         className='mt-4 text-secondary text-[17px]
         max-w-3xl leading-[30px]'
       >
