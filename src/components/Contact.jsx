@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 
@@ -162,8 +162,9 @@ const Contact = () => {
               setShowWarning(true); // Hide the warning on button click
             }}
           >
-            {loading ? 'Sending. . .' : 'Send'}
+          {loading ? 'Sending. . .' : 'Send'}
           </button>
+          
           {showWarning && !isValidEmail(form.email) && (
             <p className="text-red-500 text-sm mt-2">Please enter a valid email address.</p>
           )}

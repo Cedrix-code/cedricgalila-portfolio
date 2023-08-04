@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react"
 import { Tilt }  from 'react-tilt';
 import { motion } from 'framer-motion';
 
@@ -11,20 +12,62 @@ import { fadeIn, textVariant } from '../utils/motion';
 
 const ProjectCard = ({index, name, description, 
   tags, img, source_code_link, site_link}) => {
+    const [isMobile, setIsMobile] = useState(false);
 
+    // Check screen width on component mount and update the state
+    useEffect(() => {
+      const updateScreenWidth = () => {
+        setIsMobile(window.innerWidth <= 768);
+      };
+  
+      updateScreenWidth();
+  
+      // Add event listener to detect screen width changes
+      window.addEventListener('resize', updateScreenWidth);
+  
+      // Cleanup the event listener on unmount
+      return () => {
+        window.removeEventListener('resize', updateScreenWidth);
+      };
+    }, []);
+  
+    const handleHover = () => {
+      if (!isMobile) {
+        setIsHovering(true);
+      }
+    };
+  
+    const handleMouseLeave = () => {
+      if (!isMobile) {
+        setIsHovering(false);
+      }
+    };
+  
+    const [isHovering, setIsHovering] = useState(false);
   
   return (
     <motion.div variants={fadeIn("up", "spring",
-    index * 0.5, 0.75)}>
+      index * 0.5, 0.75)}
+    >
       <Tilt
         options={{
           max: 45,
           scale: 1,
-          speed: 450
+          speed: 450,
         }}
-        className="bg-tertiary p-5 rounded-2xl 
-        sm:w-[360px] w-full"
+        className="sm:w-[360px] w-full"
       >
+        <motion.div className={`w-full p-[1px] items-center rounded-2xl ${
+            isHovering && !isMobile || isMobile ? 'green-orange-gradient' : ''
+          }`}
+          onMouseEnter={() => handleHover(index)}
+          onMouseLeave={handleMouseLeave}
+        >
+        <div
+          className='bg-tertiary rounded-2xl 
+          py-4 px-4 min-h-[280px] 
+          flex justify-evenly flex-col'
+        >
         <div className="relative w-full h-[230px]">
         {img.indev ? (
             <div className="w-64 h-64 flex justify-center items-center mx-auto">
@@ -104,6 +147,8 @@ const ProjectCard = ({index, name, description,
             </p>
           ))}
         </div>
+        </div>
+        </motion.div>
       </Tilt>
     </motion.div>
   )

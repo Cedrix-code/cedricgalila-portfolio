@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Tilt }  from "react-tilt";
 import { motion } from "framer-motion";
 
@@ -10,12 +10,48 @@ import { SectionWrapper } from "../hoc";
 import { fadeIn, slideIn, textVariant } from "../utils/motion";
 
 const ServiceCard = ({index, title, icon}) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check screen width on component mount and update the state
+  useEffect(() => {
+    const updateScreenWidth = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    updateScreenWidth();
+
+    // Add event listener to detect screen width changes
+    window.addEventListener('resize', updateScreenWidth);
+
+    // Cleanup the event listener on unmount
+    return () => {
+      window.removeEventListener('resize', updateScreenWidth);
+    };
+  }, []);
+
+  const handleHover = () => {
+    if (!isMobile) {
+      setIsHovering(true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (!isMobile) {
+      setIsHovering(false);
+    }
+  };
+
+  const [isHovering, setIsHovering] = useState(false);
+
   return (
     <Tilt className="xs:w-[250px] w-full">
       <motion.div
         variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
-        className='w-full green-orange-gradient 
-        p-[1px] rounded-[20px] shadow-card items-center'
+        className={`w-full p-[1px] rounded-[20px] shadow-card items-center ${
+          isHovering && !isMobile || isMobile ? 'green-orange-gradient' : ''
+        }`}
+        onMouseEnter={() => handleHover(index)}
+        onMouseLeave={handleMouseLeave}
       >
         <div
           options={{
@@ -27,9 +63,9 @@ const ServiceCard = ({index, title, icon}) => {
           py-5 px-12 min-h-[280px] 
           flex justify-evenly items-center flex-col'
         >
-            <div className="flex justify-center items-center mx-auto">
-              <Lottie animationData={icon} />
-            </div>
+          <div className="flex justify-center items-center mx-auto">
+            <Lottie animationData={icon} />
+          </div>
           <h3 className="text-white text-[20px]
           font-bold text-center">{title}</h3>
         </div>

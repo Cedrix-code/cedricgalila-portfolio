@@ -10,6 +10,7 @@ import {
   reactjs,
   tailwind,
   nodejs,
+  express,
   mongodb,
   git,
   figma,
@@ -38,14 +39,14 @@ export const navLinks = [
     url: "/about",
   },
   {
-    id: "tech",
-    title: "Tech",
-    url: "/tech",
-  },
-  {
     id: "work",
     title: "Work",
     url: "/work",
+  },
+  {
+    id: "tech",
+    title: "Tech",
+    url: "/tech",
   },
   {
     id: "projects",
@@ -61,90 +62,81 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Web Developer",
+    title: "Web Development",
     icon: frontend,
   },
   {
-    title: "API Developer",
+    title: "API Development",
     icon: api,
   },
   {
-    title: "Backend Developer",
+    title: "Backend Development",
     icon: backend,
   },
   {
-    title: "UI/UX Designer",
+    title: "UI/UX Design",
     icon: uiux,
   },
 ];
 
 const technologies = [
   {
-    name: "HTML 5",
+    name: "HTML",
     icon: html,
-    description: "Here’s a fun fact about HTML: Did you know that the first version of HTML was created by Tim Berners-Lee in 1989 while he was working at CERN, the European Organization for Nuclear Research? He created it as a way to share information between scientists and researchers. Isn’t that cool? 😎",
   },
   {
-    name: "CSS 3",
+    name: "CSS",
     icon: css,
-    description: "Here’s a fun fact about CSS: Did you know that CSS stands for Cascading Style Sheets? It’s a style sheet language used to describe the look and formatting of a document written in HTML. The first version of CSS was released in 1996, and it has since become an essential part of web design, allowing developers to create beautiful and engaging websites. Isn’t that cool? 😎",
   },
   {
     name: "JavaScript",
     icon: javascript,
-    description: "Here’s a fun fact about JavaScript: Did you know that JavaScript was created in just 10 days in May 1995 by Brendan Eich while he was working at Netscape Communications Corporation? Originally, it was called Mocha, then renamed to LiveScript, and finally to JavaScript. Despite its name, it has no relation to the Java programming language. Isn’t that cool? 😎",
   },
 
   {
     name: "React JS",
     icon: reactjs,
-    description: "Here’s a fun fact about React: Did you know that React is a JavaScript library for building user interfaces? It was developed by Facebook and first released in 2013. One of the key features of React is its ability to efficiently update and render components when data changes, making it a popular choice for building fast and responsive web applications. Isn’t that cool? 😎",
   },
   {
     name: "Tailwind CSS",
     icon: tailwind,
-    description: "Here’s a fun fact about Tailwind CSS: Did you know that Tailwind CSS is a utility-first CSS framework for rapidly building custom designs? It was created by Adam Wathan, Jonathan Reinink, David Hemphill, and Steve Schoger and first released in 2017. Unlike traditional CSS frameworks that provide pre-designed components, Tailwind provides low-level utility classes that let you build completely custom designs without ever leaving your HTML. Isn’t that cool? 😎",
   },
   {
     name: "Node JS",
     icon: nodejs,
-    description: " Here’s a fun fact about Node.js: Did you know that Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that executes JavaScript code outside a web browser? It was created by Ryan Dahl in 2009, and its development and maintenance are sponsored by the OpenJS Foundation. One of the key features of Node.js is its ability to handle asynchronous I/O operations, making it a popular choice for building fast and scalable network applications. Isn’t that cool? 😎",
   },
   {
     name: "MySQL",
     icon: mysql,
-    description: "Here’s a fun fact about MySQL: Did you know that MySQL is an open-source relational database management system based on SQL (Structured Query Language)? It was created by the Swedish founders Michael Widenius and David Axmark in 1995, and its development and maintenance are now sponsored by Oracle Corporation. MySQL is one of the most popular database systems in the world, used by millions of websites and applications for storing, organizing, and retrieving data. Isn’t that cool? 😎",
   },
   {
     name: "MongoDB",
     icon: mongodb,
-    description: "Here’s a fun fact about MongoDB: Did you know that MongoDB is a cross-platform document-oriented database program? It was developed by MongoDB Inc. and first released in 2009. Unlike traditional relational databases, MongoDB uses JSON-like documents with optional schemas, making it a popular choice for building modern web applications. Isn’t that cool? 😎",
   },
   {
     name: "Three JS",
     icon: threejs,
-    description: "Here’s a fun fact about Three.js: Did you know that Three.js is a cross-browser JavaScript library and application programming interface (API) used to create and display animated 3D computer graphics in a web browser? It was created by Ricardo Cabello (also known as Mr.doob) and first released in 2010. Three.js makes it easy to create complex 3D scenes and animations using WebGL, without having to write low-level WebGL code. Isn’t that cool? 😎",
   },
   {
-    name: "Git",
+    name: "Express",
+    icon: express,
+  },
+  {
+    name: "Github",
     icon: git,
-    description: "Here’s a fun fact about Git: Did you know that Git is a distributed version control system for tracking changes in source code during software development? It was created by Linus Torvalds, the creator of the Linux operating system, in 2005. Git is designed to handle everything from small to very large projects with speed and efficiency, making it a popular choice for developers all over the world. Isn’t that cool? 😎",
   },
   {
     name: "Figma",
     icon: figma,
-    description: "Here’s a fun fact about Figma: Did you know that Figma is a vector graphics editor and prototyping tool that is primarily web-based, with additional offline features enabled by desktop applications for macOS and Windows? It was founded in 2012 by Dylan Field and Evan Wallace. Figma has become popular among designers due to its easy-to-use interface, powerful design tools, and real-time collaboration features. Isn’t that cool? 😎",
   },
   {
     name: "Blender",
     icon: blender,
-    description: "Here’s a fun fact about Blender: Did you know that Blender is a free and open-source 3D creation suite? It was first developed by the Dutch animation studio NeoGeo and Ton Roosendaal in 1995. Blender supports the entirety of the 3D pipeline—modeling, rigging, animation, simulation, rendering, compositing and motion tracking, video editing and 2D animation pipeline. It has become popular among artists and designers due to its powerful features and active community. Isn’t that cool? 😎",
   },
   {
     name: "VS Code",
     icon: vscode,
-    description: "Here’s a fun fact about Visual Studio Code (VS Code): Did you know that VS Code is a free source-code editor made by Microsoft for Windows, Linux, and macOS? It was first released in 2015 and has since become one of the most popular code editors among developers. VS Code includes features such as debugging, intelligent code completion, snippets, and code refactoring, making it a powerful tool for writing and editing code. Isn’t that cool? 😎",
-  },
+  },  
 ];
 
 const experiences = [

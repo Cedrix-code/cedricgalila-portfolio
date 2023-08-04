@@ -24,30 +24,16 @@
   border-radius: 30%;
   text-shadow: 6px 8px 0px rgba(0, 0, 0, 1);
 }
-.left-box {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50px; /* Adjust the width as needed */
-  height: 100vh; /* Adjust the height as needed */
-  background-color: #f0f0f0;
-  z-index: 1; /* Set a higher z-index to make it appear on top */
-}
-
-.right-box {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50%; /* Adjust the width as needed */
-  height: 100vh; /* Adjust the height as needed */
-  background-color: #ccc;
-  z-index: 0; /* Lower z-index to make it appear below the left-box */
-}
 
 .hash-span {
   margin-top: -100px;
   padding-bottom: 100px;
   display: block;
+}
+
+.customtransition {
+  transition: all 0.3s ease;
+  transition-opacity: opacity 0.3s ease;
 }
 
 body {
@@ -69,15 +55,6 @@ body::before {
   opacity: 0.7; /* Adjust opacity as needed to control the clipping effect */
   z-index: -1; /* Place pseudo-element behind the content */
 }
-
-.lottie-container {
-  background-color: transparent;
-  /* Remove any default background color applied by the library */
-}
-
-/* .custombg {
-  background-image: linear-gradient(to right top, #050816, #060d1a, #06121d, #061620, #051923);
-} */
 
 .black-gradient {
   background: #000000; /* fallback for old browsers */

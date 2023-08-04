@@ -114,7 +114,7 @@ const Navbar = () => {
                 key={nav.id}
                 className={`${
                   active === nav.title ? 'text-accent' : 'text-secondary'
-                } hover:text-accent text-[18px] font-medium cursor-pointer`}
+                } hover:text-accent transition-colors text-[18px] font-medium cursor-pointer`}
               >
                 <Link
                   to={nav.id}
