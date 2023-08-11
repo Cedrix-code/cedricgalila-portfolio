@@ -85,21 +85,6 @@ const ProjectCard = ({index, name, description,
             {site_link ? (
               <>
               <div
-                onClick={() => window.open
-                (source_code_link, "_blank")}
-                className="bg-primary backdrop-blur-sm 
-                bg-opacity-70 hover:bg-accent w-10 h-10
-                rounded-full flex justify-center
-                items-center cursor-pointer"
-              >
-                <img 
-                  src={github}
-                  alt="github"
-                  className="w-1/2 h-1/2
-                  object-contain"
-                />
-              </div>
-              <div
                 onClick={() => window.open(site_link, "_blank")}
                 className="bg-primary backdrop-blur-sm 
                 bg-opacity-70 hover:bg-accent w-10 h-10 
@@ -111,6 +96,21 @@ const ProjectCard = ({index, name, description,
                   alt="github"
                   className="w-1/2 
                   h-1/2 
+                  object-contain"
+                />
+              </div>
+              <div
+                onClick={() => window.open
+                (source_code_link, "_blank")}
+                className="bg-primary backdrop-blur-sm 
+                bg-opacity-70 hover:bg-accent w-10 h-10
+                rounded-full flex justify-center
+                items-center cursor-pointer"
+              >
+                <img 
+                  src={github}
+                  alt="github"
+                  className="w-1/2 h-1/2
                   object-contain"
                 />
               </div>

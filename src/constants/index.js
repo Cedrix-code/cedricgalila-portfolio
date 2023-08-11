@@ -5,9 +5,11 @@ import {
   uiux,
   indev,
   javascript,
+  typescript,
   html,
   css,
   reactjs,
+  nextjs,
   tailwind,
   nodejs,
   express,
@@ -92,10 +94,17 @@ const technologies = [
     name: "JavaScript",
     icon: javascript,
   },
-
+  {
+    name: "TypeScript",
+    icon: typescript,
+  },
   {
     name: "React JS",
     icon: reactjs,
+  },
+  {
+    name: "Next JS",
+    icon: nextjs,
   },
   {
     name: "Tailwind CSS",
@@ -219,27 +228,6 @@ const projects = [
     site_link: "https://cedricgalila.netlify.app/",
   },
   {
-    name: "G-Tip",
-    description:
-      "A Web-based social media style platform name “G-TIP” that lets people share their travel moments in Guimaras Island. This was our capstone project that we proposed to Guimaras Tourism Office.",
-    tags: [
-      {
-        name: "html",
-        color: "orange-text-gradient",
-      },
-      { 
-        name: "php",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "yellow-text-gradient",
-      },
-    ],
-    img: gtip,
-    source_code_link: "https://github.com/Cedrix-code",
-  },
-  {
     name: "Netflux",
     description:
       "Simple side project to practice HTML, JavaScript, and CSS. Also implemented the use of API, specifically TMDb API to fetch movie datas. I learned different React hooks doing this project.",
@@ -281,6 +269,27 @@ const projects = [
     ],
     img: engjap,
     source_code_link: "https://github.com/Cedrix-code/japanese-translate-python",
+  },
+  {
+    name: "G-Tip",
+    description:
+      "A Web-based social media style platform name “G-TIP” that lets people share their travel moments in Guimaras Island. This was our capstone project that we proposed to Guimaras Tourism Office.",
+    tags: [
+      {
+        name: "html",
+        color: "orange-text-gradient",
+      },
+      { 
+        name: "php",
+        color: "green-text-gradient",
+      },
+      {
+        name: "css",
+        color: "yellow-text-gradient",
+      },
+    ],
+    img: gtip,
+    source_code_link: "https://github.com/Cedrix-code",
   },
   {
     name: "in Development",
