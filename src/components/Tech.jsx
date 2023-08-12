@@ -22,7 +22,7 @@ const TechCard = () => {
         <motion.div
           key={technology.name}
           variants={fadeIn('up', 'spring', i * 0.1, 0.75)} // Add delay based on index
-          className="w-28 h-28 relative mx-4 my-4 justify-center items-center"
+          className="w-28 h-28 relative mx-4 my-4 justify-center items-center select-none"
         >
           <motion.img
             src={technology.icon}

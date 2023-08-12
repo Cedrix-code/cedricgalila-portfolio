@@ -34,6 +34,7 @@ import gsu from "./company/gsu.png";
 import guimaras from "./company/guimaras.png";
 
 import portfolio from "./portfolio.png";
+import thready from "./thready.png";
 import gtip from "./gtip.png";
 import netflux from "./netflux.png";
 import engjap from "./engjap.png";
@@ -69,6 +70,7 @@ export {
   gsu,
   guimaras,
   portfolio,
+  thready,
   gtip,
   netflux,
   engjap,

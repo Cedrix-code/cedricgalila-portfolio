@@ -28,6 +28,7 @@ import {
   mysql,
   vscode,
   portfolio,
+  thready
 } from "../assets";
 
 export const navLinks = [
@@ -226,6 +227,28 @@ const projects = [
     img: portfolio,
     source_code_link: "https://github.com/Cedrix-code/cedricgalila-portfolio",
     site_link: "https://cedricgalila.netlify.app/",
+  },
+  {
+    name: "Thready",
+    description:
+      "We know that 'Threads' have been an overnight success after it was launch by Meta, so I recreated a clone for it for me to explore how social media architecture works. From auth to webhooks & so on  .",
+    tags: [
+      {
+        name: "nextjs",
+        color: "orange-text-gradient",
+      },
+      {
+        name: "typescript",
+        color: "green-text-gradient",
+      },
+      {
+        name: "monggodb",
+        color: "yellow-text-gradient",
+      },
+    ],
+    img: thready,
+    source_code_link: "https://github.com/Cedrix-code/threads-clone",
+    site_link: "https://threads-clone-theta.vercel.app/",
   },
   {
     name: "Netflux",
