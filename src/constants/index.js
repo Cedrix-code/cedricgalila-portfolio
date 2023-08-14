@@ -231,7 +231,7 @@ const projects = [
   {
     name: "Thready",
     description:
-      "We know that 'Threads' have been an overnight success after it was launch by Meta, so I recreated a clone for it for me to explore how social media architecture works. From auth to webhooks & so on  .",
+      "We know that 'Threads' have been an overnight success after it was launch by Meta, so I recreated a clone for it for me to explore how social media architecture works. From auth to webhooks & so on.",
     tags: [
       {
         name: "nextjs",

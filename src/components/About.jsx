@@ -11,8 +11,8 @@ import { fadeIn, textVariant } from "../utils/motion";
 
 const ServiceCard = ({index, title, icon}) => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
 
-  // Check screen width on component mount and update the state
   useEffect(() => {
     const updateScreenWidth = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -20,10 +20,8 @@ const ServiceCard = ({index, title, icon}) => {
 
     updateScreenWidth();
 
-    // Add event listener to detect screen width changes
     window.addEventListener('resize', updateScreenWidth);
 
-    // Cleanup the event listener on unmount
     return () => {
       window.removeEventListener('resize', updateScreenWidth);
     };
@@ -41,8 +39,6 @@ const ServiceCard = ({index, title, icon}) => {
     }
   };
 
-  const [isHovering, setIsHovering] = useState(false);
-
   return (
     <Tilt className="xs:w-[250px] w-full">
       <motion.div
@@ -50,7 +46,7 @@ const ServiceCard = ({index, title, icon}) => {
         className={`w-full p-[1px] rounded-[20px] shadow-card items-center ${
           isHovering && !isMobile || isMobile ? 'green-orange-gradient' : ''
         }`}
-        onMouseEnter={() => handleHover(index)}
+        onMouseEnter={handleHover}
         onMouseLeave={handleMouseLeave}
       >
         <div
@@ -88,8 +84,8 @@ const About = () => {
         max-w-3xl leading-[30px]'
       >
         I'm a junior software engineer who got lost in the BPO jungle for a while. 
-        I graduated with an IT degree in 2020, but the tech jobs were scarce back in my home province and I had to pay the bills somehow. 
-        So I ended up talking to angry customers on the phone for a living. But I never gave up on my dream of coding cool stuff. 
+        I graduated with an IT degree in 2020, but the tech jobs were scarce back in my home province. 
+        I was able to work with offshore clients and customers, I also had the chance to hone my communication skills with ease. 
         I kept learning Web Development and JavaScript and its awesome frameworks like React, Node.js, and Three.js. 
         I'm also good at solving problems and making customers happy. Well, at least the ones who don't yell at me. 
         I'm ready to switch back to software development and show you what I can do. 
