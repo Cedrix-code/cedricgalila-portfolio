@@ -84,7 +84,7 @@ const About = () => {
         max-w-3xl leading-[30px]'
       >
         I'm a junior software engineer who got lost in the BPO jungle for a while. 
-        I graduated with an IT degree in 2020, but the tech jobs were scarce back in my home province. 
+        I graduated with an IT degree in 2020, but the tech jobs were scarce back in my home province. During my BPO stint
         I was able to work with offshore clients and customers, I also had the chance to hone my communication skills with ease. 
         I kept learning Web Development and JavaScript and its awesome frameworks like React, Node.js, and Three.js. 
         I'm also good at solving problems and making customers happy. Well, at least the ones who don't yell at me. 
