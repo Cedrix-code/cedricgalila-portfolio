@@ -87,7 +87,8 @@ const About = () => {
         I graduated with an IT degree in 2020, but the tech jobs were scarce back in my home province. During my BPO stint
         I was able to work with offshore clients and customers, I also had the chance to hone my communication skills with ease. 
         I'm also good at solving problems and making customers happy. Well, at least the ones who don't yell at me. 
-        Even though I haven't got into tech rolse I kept learning Web Development and JavaScript and its awesome frameworks like React, Node.js, and Three.js. 
+        Even though I haven't got into tech roles initially, I kept learning Web Development and 
+        JavaScript and its awesome frameworks like React, Node.js, and Three.js. 
         I'm ready to switch back to software development and show you what I can do. 
         Let's say I'm more leaned towards Frontend as of this time, but I am constantly learning and eventually would delved deep into other 
         aspects of Software Development like Backend, DevOps, CI/CD, and so on. And hopefully by then I am confident with my Full-stack skills.

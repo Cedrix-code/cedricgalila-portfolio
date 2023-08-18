@@ -90,7 +90,7 @@ const Navbar = () => {
         }}
       ></motion.div>
 
-      <div className="w-full flex justify-between justify-center items-center max-w-7xl mx-auto select-none">
+      <div className="w-full flex justify-between items-center max-w-7xl mx-auto select-none">
         <Link
           to="/home"
           spy={true}
