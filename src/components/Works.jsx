@@ -115,9 +115,9 @@ const CardCarouselControl = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
 
   return (
-      <section ref={!isMobile ? targetRef : null} className={!isMobile ? 'relative -my-10 h-[300vh] bg-transparent' : ''}>
-        <div className={!isMobile ? 'sticky top-0 flex h-screen items-center overflow-x-visible' : ''}>
-          <motion.div style={!isMobile ? { x } : null} className={`flex gap-7 ${isMobile ? 'mt-10 flex-wrap justify-center' : ''}`}>
+      <section ref={!isMobile ? targetRef : null} className={!isMobile ? 'relative -my-10 h-[300vh] bg-transparent' : null}>
+        <div className={!isMobile ? 'sticky top-0 flex h-screen items-center overflow-x-visible' : null}>
+          <motion.div style={!isMobile ? { x } : null} className={`flex gap-7 ${!isMobile ? '' : 'mt-10 flex-wrap justify-center'}`}>
             {projects.map((project, index) => (
               <ProjectCard
                 key={`project-${index}`}
