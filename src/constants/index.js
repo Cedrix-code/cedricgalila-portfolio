@@ -191,7 +191,7 @@ const experiences = [
   },
   {
     id: 4,
-    title: ["Frontend Developer", "API & Backend", "UI/UX Design & Graphics", "Any Job opening?", "Hire me!"],
+    title: ["Frontend Developer", "API Developer", "Backend Developer", "UI/UX & Graphic Design", "Any Job opening?", "Hire me!"],
     company_name: "? ? ? ? ?",
     icon: future,
     iconBg: "#2e373e",

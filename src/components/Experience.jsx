@@ -22,7 +22,7 @@ const ExperienceCard = ({ experience }) => {
     if (experience.id === 4) {
       const interval = setInterval(() => {
         setCurrentWordIndex((prevIndex) => (prevIndex + 1) % titleWords.length);
-      }, titleWords.length * 1000); // Change the time here to control the delay between loops.
+      }, titleWords.length * 800); // Change the time here to control the delay between loops.
 
       return () => clearInterval(interval);
     }
@@ -54,7 +54,7 @@ const ExperienceCard = ({ experience }) => {
                 strings: [titleWords[currentWordIndex]],
                 autoStart: true,
                 loop: false,
-                delay: 50,
+                delay: 20,
               }}
             />
           </h3>
