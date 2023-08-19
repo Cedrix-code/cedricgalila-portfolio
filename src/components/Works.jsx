@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Tilt }  from "react-tilt";
-import { motion } from "framer-motion";
+import { motion, useTransform, useScroll } from "framer-motion";
 
 import Lottie from "lottie-react";
 
@@ -10,9 +10,8 @@ import { projects } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const ProjectCard = ({index, name, description, tags, img, source_code_link, site_link }) => {
+const useMobileDetection = () => {
   const [isMobile, setIsMobile] = useState(false);
-  const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
     const updateScreenWidth = () => {
@@ -27,6 +26,13 @@ const ProjectCard = ({index, name, description, tags, img, source_code_link, sit
       window.removeEventListener('resize', updateScreenWidth);
     };
   }, []);
+
+  return isMobile;
+};
+
+const ProjectCard = ({ index, name, description, tags, img, source_code_link, site_link }) => {
+  const [isHovering, setIsHovering] = useState(false);
+  const isMobile = useMobileDetection();
 
   const handleHover = () => {
     if (!isMobile) {
@@ -95,10 +101,38 @@ const ProjectCard = ({index, name, description, tags, img, source_code_link, sit
         </div>
       </motion.div>
     </Tilt>
-  )
-}
+  );
+};
+
+const CardCarouselControl = () => {
+  const isMobile = useMobileDetection();
+
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  });
+
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
+
+  return (
+      <section ref={!isMobile ? targetRef : null} className={!isMobile ? 'relative -my-10 h-[300vh] bg-transparent' : ''}>
+        <div className={!isMobile ? 'sticky top-0 flex h-screen items-center overflow-x-visible' : ''}>
+          <motion.div style={!isMobile ? { x } : null} className={`flex gap-7 ${isMobile ? 'mt-10 flex-wrap justify-center' : ''}`}>
+            {projects.map((project, index) => (
+              <ProjectCard
+                key={`project-${index}`}
+                index={index}
+                {...project}
+              />
+            ))}
+          </motion.div>
+        </div>
+      </section>
+    );
+  };
 
 const Works = () => {
+
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -109,12 +143,7 @@ const Works = () => {
           Projects.
         </h2>
       </motion.div>
-
-      <div className='mt-20 flex flex-wrap gap-7 justify-center'>
-        {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
-        ))}
-      </div>
+      <CardCarouselControl />
     </>
   );
 };
