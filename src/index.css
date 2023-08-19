@@ -36,16 +36,31 @@
   transition-opacity: opacity 0.3s ease;
 }
 
-.project-card-wrapper {
-  display: flex;
-  gap: 4rem; /* Adjust as needed */
-  padding: 0; /* Remove padding to allow cards to extend */
-  margin-left: -2rem; /* Counteract the gap to the left */
+.carousel-section.desktop {
+  position: relative;
+  margin-top: -10rem;
+  height: 300vh;
+  background-color: transparent;
 }
 
-.project-card-container {
-  flex: 0 0 auto; /* Prevent cards from expanding */
-  padding: 0 2rem; /* Apply padding on each card */
+.carousel-section.mobile {
+  display: contents;
+}
+
+.carousel-container.desktop {
+  position: sticky;
+  top: 0;
+  margin-top: 6rem;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  overflow-x: visible;
+}
+
+.carousel-container.mobile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 body {

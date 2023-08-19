@@ -115,21 +115,28 @@ const CardCarouselControl = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
 
   return (
-      <section ref={!isMobile ? targetRef : null} className={!isMobile ? 'relative -my-10 h-[300vh] bg-transparent' : null}>
-        <div className={!isMobile ? 'sticky top-0 flex h-screen items-center overflow-x-visible' : null}>
-          <motion.div style={!isMobile ? { x } : null} className={`flex gap-7 ${!isMobile ? '' : 'mt-10 flex-wrap justify-center'}`}>
-            {projects.map((project, index) => (
-              <ProjectCard
-                key={`project-${index}`}
-                index={index}
-                {...project}
-              />
-            ))}
-          </motion.div>
-        </div>
-      </section>
-    );
-  };
+    <section
+      ref={targetRef}
+      className={`carousel-section ${isMobile ? 'mobile' : 'desktop'}`}
+    >
+      <div className={`carousel-container ${isMobile ? 'mobile' : 'desktop'}`}>
+        <motion.div
+          style={isMobile ? null : { x }}
+          className={`flex gap-7 ${isMobile ? 'mt-10 flex-wrap justify-center' : ''}`}
+        >
+          {projects.map((project, index) => (
+            <ProjectCard
+              key={`project-${index}`}
+              index={index}
+              {...project}
+            />
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
 
 const Works = () => {
 

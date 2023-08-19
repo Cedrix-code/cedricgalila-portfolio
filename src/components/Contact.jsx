@@ -79,7 +79,7 @@ const Contact = () => {
   const isButtonDisabled = isFormEmpty && isFormTouched; // Button is disabled only when the form is empty and user has touched it
 
   return (
-    <div className="xl:mt-12 xl:flex-row
+    <div className="xl:flex-row
     flex-col-reverse flex gap-10 overflow-x-visible">
       <motion.div
         variants={slideIn('left', "tween", 0.2, 1)}
