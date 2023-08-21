@@ -36,7 +36,6 @@ import thready from "./thready.png";
 import gtip from "./gtip.png";
 import netflux from "./netflux.png";
 import engjap from "./engjap.png";
-import indev from "./indev.png";
 
 export {
   logo,
@@ -46,7 +45,6 @@ export {
   api,
   backend,
   uiux,
-  indev,
   css,
   docker,
   figma,
