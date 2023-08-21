@@ -8,8 +8,6 @@ import api from "./service1.json";
 import backend from "./service2.json";
 import uiux from "./service3.json";
 
-import indev from "./animation-1.json";
-
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
 import figma from "./tech/figma.png";
@@ -38,6 +36,7 @@ import thready from "./thready.png";
 import gtip from "./gtip.png";
 import netflux from "./netflux.png";
 import engjap from "./engjap.png";
+import indev from "./indev.png";
 
 export {
   logo,

@@ -16,7 +16,7 @@ const Hero = () => {
           <motion.div 
             initial="hidden"
             animate="show"
-            variants={zoomIn(1.5, 1)}
+            variants={fadeIn("down", "spring", 1, 1)}
             className='w-5 h-5 rounded-full bg-[#E88C1F]' 
           />
           <motion.div
@@ -50,7 +50,7 @@ const Hero = () => {
             className={`${styles.heroSubText} mt-2 text-white-100`}
           >
             The web brought you here, finally! <br className='xs:block hidden' />
-            Building ideas with code. <br className='sm:block hidden' />
+            Let's build ideas with code. <br className='sm:block hidden' />
             One line at a time.
           </motion.p>
           </div>

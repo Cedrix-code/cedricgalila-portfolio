@@ -1,5 +1,5 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"); */
-@import url('https://fonts.cdnfonts.com/css/proxima-nova-2');
+@import url('https://fonts.googleapis.com/css?family=Proxima+Nova');
 
 @tailwind base;
 @tailwind components;
@@ -13,6 +13,10 @@
   scroll-behavior: smooth;
   color-scheme: dark;
   scrollbar-width: none;
+}
+
+.project-card.hidden {
+  display: none;
 }
 
 body {
@@ -42,7 +46,7 @@ body::before {
 .drop-shadow{
   letter-spacing: 3.5px;
   border-radius: 30%;
-  text-shadow: 6px 8px 0px rgba(0, 0, 0, 1);
+  text-shadow: 6px 4px 4px rgba(10, 10, 10, 0.6);
 }
 
 .hash-span {
@@ -54,46 +58,6 @@ body::before {
 .customtransition {
   transition: all 0.3s ease;
   transition-opacity: opacity 0.3s ease;
-}
-
-.carousel-section.desktop {
-  position: relative;
-  margin-top: -10rem;
-  height: 300vh;
-  background-color: transparent;
-}
-
-.carousel-section.mobile {
-  display: contents;
-}
-
-.carousel-container.desktop {
-  position: sticky;
-  top: 0;
-  margin-top: 6rem;
-  display: flex;
-  height: 100vh;
-  align-items: center;
-  overflow-x: visible;
-}
-
-.carousel-container.mobile {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.carousel-card.desktop {
-  display: flex;
-  gap: 1.75rem; /* Equivalent to Tailwind's gap-7 */
-}
-
-.carousel-card.mobile {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.75rem;
-  margin-top: 2.5rem; /* Equivalent to Tailwind's mt-10 */
-  justify-content: center;
 }
 
 .black-gradient {

@@ -16,7 +16,7 @@ const ServiceCard = ({index, title, icon}) => {
 
   useEffect(() => {
     const updateScreenWidth = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.screen.width <= 768);
     };
 
     updateScreenWidth();
@@ -45,8 +45,7 @@ const ServiceCard = ({index, title, icon}) => {
       <motion.div
         variants={fadeIn("right", "spring", 0.3 * index, 0.75)}
         className={`w-full p-[1px] rounded-[20px] shadow-card items-center ${
-          isHovering && !isMobile || isMobile ? 'green-orange-gradient' : ''
-        }`}
+        isHovering && !isMobile || isMobile ? 'green-orange-gradient' : ''}`}
         onMouseEnter={handleHover}
         onMouseLeave={handleMouseLeave}
       >
@@ -72,6 +71,7 @@ const ServiceCard = ({index, title, icon}) => {
 }
 
 const About = () => {
+
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -81,8 +81,8 @@ const About = () => {
 
       <motion.p
         variants={textVariant(0.3)}
-        className='mt-4 text-secondary text-[17px]
-        max-w-3xl leading-[30px]'
+        className='mt-4 text-secondary lg:text-[17px] sm:text-[15px] xs:text-[13px]
+        text-[16px] max-w-3xl leading-[25px]'
       >
         I'm a junior software engineer who got lost in the BPO jungle for a while. 
         I graduated with an IT degree in 2020, but the tech jobs were scarce back in my home province. During my BPO stint
@@ -99,7 +99,11 @@ const About = () => {
 
       <div className='mt-20 flex flex-wrap gap-10 justify-center'>
         {services.map((service, index) => (
-          <ServiceCard key={service.title} index={index} {...service} />
+          <ServiceCard 
+            key={service.title} 
+            index={index} 
+            {...service} 
+          />
         ))}
       </div>
     </>

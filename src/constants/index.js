@@ -314,28 +314,6 @@ const projects = [
     img: gtip,
     source_code_link: "https://github.com/Cedrix-code",
   },
-  {
-    name: "in Development",
-    description:
-      "Upcoming projects are in the works. The developer is busy coding new ideas. Come back soon to check out new projects. < coffee eat code code code sleep(zzzZZ) repeat >",
-    tags: [
-      {
-        name: "stay",
-        color: "orange-text-gradient",
-      },
-      {
-
-        name: "tuned",
-        color: "green-text-gradient",
-      },
-      {
-        name: "for more",
-        color: "yellow-text-gradient",
-      },
-    ],
-    img: {indev},
-    source_code_link: "https://github.com/Cedrix-code",
-  },
 ];
 
 export { services, technologies, experiences, projects };
