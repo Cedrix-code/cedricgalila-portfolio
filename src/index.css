@@ -15,10 +15,6 @@
   scrollbar-width: none;
 }
 
-.project-card.hidden {
-  display: none;
-}
-
 body {
   position: relative;
 	line-height: 1.7;
@@ -37,6 +33,10 @@ body::before {
   background: linear-gradient(to right top, #050816, #060d1a, #06121d, #061620, #051923);
   opacity: 0.7; /* Adjust opacity as needed to control the clipping effect */
   z-index: -1; /* Place pseudo-element behind the content */
+}
+
+html {
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
