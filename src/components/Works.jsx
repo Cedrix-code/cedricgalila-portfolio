@@ -122,7 +122,7 @@ const CardCarouselControl = () => {
       <div className={`carousel-container ${isMobile ? 'mobile' : 'desktop'}`}>
         <motion.div
           style={isMobile ? null : { x }}
-          className={`flex gap-7 ${isMobile ? 'mt-10 flex-wrap justify-center' : ''}`}
+          className={`carousel-card ${isMobile ? 'mobile' : 'desktop'}`}
         >
           {projects.map((project, index) => (
             <ProjectCard

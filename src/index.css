@@ -15,6 +15,26 @@
   scrollbar-width: none;
 }
 
+body {
+  position: relative;
+	line-height: 1.7;
+	background-image: url('./assets/bg-dirt.png');
+  background-blend-mode: soft-light;
+	min-height: 100%; /* OPTIONAL */
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to right top, #050816, #060d1a, #06121d, #061620, #051923);
+  opacity: 0.7; /* Adjust opacity as needed to control the clipping effect */
+  z-index: -1; /* Place pseudo-element behind the content */
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -63,24 +83,17 @@
   justify-content: center;
 }
 
-body {
-  position: relative;
-	line-height: 1.7;
-	background-image: url('./assets/bg-dirt.png');
-  background-blend-mode: soft-light;
-	min-height: 100%; /* OPTIONAL */
+.carousel-card.desktop {
+  display: flex;
+  gap: 1.75rem; /* Equivalent to Tailwind's gap-7 */
 }
 
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(to right top, #050816, #060d1a, #06121d, #061620, #051923);
-  opacity: 0.7; /* Adjust opacity as needed to control the clipping effect */
-  z-index: -1; /* Place pseudo-element behind the content */
+.carousel-card.mobile {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+  margin-top: 2.5rem; /* Equivalent to Tailwind's mt-10 */
+  justify-content: center;
 }
 
 .black-gradient {
