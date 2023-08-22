@@ -12,9 +12,6 @@ const styles = {
       "text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]",
     sectionSubText:
       "sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider",
-    
-    ptext:
-      "mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]",
   };
   
   export { styles };

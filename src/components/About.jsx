@@ -10,13 +10,12 @@ import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const ServiceCard = ({index, title, icon}) => {
+const useMobileDetection = () => {
   const [isMobile, setIsMobile] = useState(false);
-  const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
     const updateScreenWidth = () => {
-      setIsMobile(window.screen.width <= 768);
+      setIsMobile(window.innerWidth <= 768);
     };
 
     updateScreenWidth();
@@ -27,6 +26,13 @@ const ServiceCard = ({index, title, icon}) => {
       window.removeEventListener('resize', updateScreenWidth);
     };
   }, []);
+
+  return isMobile;
+};
+
+const ServiceCard = ({index, title, icon}) => {
+  const isMobile = useMobileDetection();
+  const [isHovering, setIsHovering] = useState(false);
 
   const handleHover = () => {
     if (!isMobile) {
@@ -62,8 +68,9 @@ const ServiceCard = ({index, title, icon}) => {
           <div className="flex justify-center items-center mx-auto">
             <Lottie animationData={icon} />
           </div>
-          <h3 className="text-white text-[20px]
-          font-bold text-center">{title}</h3>
+          <h3 className={`text-white font-bold text-center 
+          text-${isMobile ? '[16px]' : '[20px]'}`}
+          >{title}</h3>
         </div>
       </motion.div>
     </Tilt>
@@ -71,7 +78,7 @@ const ServiceCard = ({index, title, icon}) => {
 }
 
 const About = () => {
-
+  const isMobile = useMobileDetection();
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -81,8 +88,8 @@ const About = () => {
 
       <motion.p
         variants={textVariant(0.3)}
-        className='mt-4 text-secondary lg:text-[17px] sm:text-[15px] xs:text-[13px]
-        text-[16px] max-w-3xl leading-[25px]'
+        className={`mt-4 text-secondary lg:text-[18px] sm:text-[15px] xs:text-[13px]
+        max-w-3xl ${isMobile ? 'text-[14px] leading-[18px]' : 'leading-[25px]'}`}
       >
         I'm a junior software engineer who got lost in the BPO jungle for a while. 
         I graduated with an IT degree in 2020, but the tech jobs were scarce back in my home province. During my BPO stint

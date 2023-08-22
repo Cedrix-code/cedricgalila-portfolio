@@ -37,6 +37,7 @@ body::before {
 
 html {
   overflow-x: hidden;
+  overflox-x: none;
 }
 
 ::-webkit-scrollbar {

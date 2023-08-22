@@ -14,7 +14,22 @@ import { textVariant } from "../utils/motion";
 const ExperienceCard = ({ experience }) => { 
   const specificExperience = experience.id === 4 ? experiences.find((exp) => exp.id === 4) : null;
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const updateScreenWidth = () => {
+      setIsMobile(window.screen.width <= 768);
+    };
 
+    updateScreenWidth();
+
+    window.addEventListener('resize', updateScreenWidth);
+
+    return () => {
+      window.removeEventListener('resize', updateScreenWidth);
+    };
+  }, []);
+  
   // Split the title into separate words or strings
   const titleWords = specificExperience ? specificExperience.title : [];
 
@@ -48,7 +63,7 @@ const ExperienceCard = ({ experience }) => {
     >
       <div>
         {experience.id === 4 ? (
-          <h3 className="text-white text-[24px] font-bold">
+          <h3 className={`text-white font-bold text-${isMobile ? '[20px]' : '[24px]'}`}>
             <Typewriter
               options={{
                 strings: [titleWords[currentWordIndex]],
@@ -59,7 +74,7 @@ const ExperienceCard = ({ experience }) => {
             />
           </h3>
         ) : (
-          <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>
+          <h3 className={`text-white font-bold text-${isMobile ? '[20px]' : '[24px]'}`}>{experience.title}</h3>
         )}
         <p className="text-secondary text-[16px] font-semibold" style={{ margin: 0 }}>
           {experience.company_name}
@@ -68,7 +83,7 @@ const ExperienceCard = ({ experience }) => {
         
       <ul className="mt-5 list-disc ml-5 space-y-2">
         {experience.points.map((point, index) => (
-          <li key={`experience-point-${index}`} className="text-white-100 lg:text-[14px] sm:text-[13px] xs:text-[12px] text-[14px] pl-1 tracking-wider">
+          <li key={`experience-point-${index}`} className={`text-white-100 pl-1 tracking-wider text-${isMobile ? '[12px]' : '[14px]'}`}>
             {point}
           </li>
         ))}

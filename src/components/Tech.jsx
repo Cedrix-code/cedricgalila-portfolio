@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { technologies } from '../constants';
@@ -7,6 +7,21 @@ import { SectionWrapper } from '../hoc';
 
 const TechCard = () => {
   const [hoverIndex, setHoverIndex] = useState(-1);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const updateScreenWidth = () => {
+      setIsMobile(window.screen.width <= 768);
+    };
+
+    updateScreenWidth();
+
+    window.addEventListener('resize', updateScreenWidth);
+
+    return () => {
+      window.removeEventListener('resize', updateScreenWidth);
+    };
+  }, []);
 
   const handleHover = (index) => {
     setHoverIndex(index);
@@ -17,12 +32,13 @@ const TechCard = () => {
   };
 
   return (
-    <div className="flex flex-row flex-wrap justify-center items-center gap-10">
+    <div className={`flex flex-row flex-wrap justify-center items-center ${isMobile ? 'gap-2 mt-6' : 'gap-10 mt-8'}`}>
       {technologies.map((technology, i) => (
         <motion.div
           key={technology.name}
           variants={fadeIn('up', 'spring', i * 0.1, 0.75)} // Add delay based on index
-          className="w-28 h-28 relative mx-4 my-4 justify-center items-center select-none"
+          // className={`relative mx-4 my-4 justify-center items-center select-none ${isMobile ? 'w-14 h-14' : 'w-28 h-28'}`}
+          className="relative mx-4 my-4 justify-center items-center select-none w-14 h-14 lg:w-28 lg:h-28 sm:w-20 sm:h-20"
         >
           <motion.img
             src={technology.icon}
@@ -35,7 +51,7 @@ const TechCard = () => {
             transition="customtransition"
           />
           <motion.h1
-            className={`text-secondary text-lg text-center ${
+            className={`text-secondary text-center ${isMobile ? 'text-sm' : 'text-lg'} ${
               hoverIndex === i ? 'opacity-100' : 'opacity-0'
             }`}
             initial={{ y: 20, opacity: 0 }}

@@ -71,7 +71,7 @@ const Navbar = () => {
     <nav
       className={`${
         styles.paddingX
-      } w-full flex items-center py-5 fixed top-0 ${
+      } w-full flex-wrap flex items-center py-4 lg:py-5 sm:py-4 xs:py-3  fixed top-0 ${
         scrolled ? 'z-30 bg-primary backdrop-blur-sm bg-opacity-40' : 'z-30 bg-transparent'
       }`}
     >
@@ -83,14 +83,14 @@ const Navbar = () => {
           top: 0,
           right: 0,
           left: 0,
-          height: 7,
+          height: 6,
           background: '#E88C1F',
           transformOrigin: '0%',
           zIndex: 1,
         }}
       ></motion.div>
 
-      <div className="w-full flex justify-between items-center max-w-7xl mx-auto select-none">
+      <div className="w-full flex-wrap flex justify-between items-center max-w-7xl mx-auto select-none">
         <Link
           to="/home"
           spy={true}

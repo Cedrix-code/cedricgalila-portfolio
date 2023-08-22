@@ -90,12 +90,12 @@ const ProjectCard = ({ index, name, description, tags, img, source_code_link, si
           </div>
           <div className="mt-5">
             <h3 className="text-white font-bold text-[24px]">{name}</h3>
-            <p className="mt-2 text-secondary lg:text-[14px] sm:text-[13px] xs:text-[12px]">{description}</p>
+            <p className={`mt-2 text-secondary text-${isMobile ? '[12px]' : '[14px]'}`}>{description}</p>
           </div>
 
           <div className="mt-4 flex flex-wrap gap-2">
             {tags.map((tag) => (
-              <p key={tag.name} className={`text-[14px] ${tag.color}`}>
+              <p key={tag.name} className={`text-${isMobile ? '[12px]' : '[14px]'} ${tag.color}`}>
                 #{tag.name}
               </p>
             ))}
@@ -118,7 +118,7 @@ const CardCarouselControl = () => {
 
   return (
     <section ref={!isMobile ? targetRef : null} className={!isMobile ? 'relative -my-10 h-[300vh] bg-transparent' : null}>
-    <div className={!isMobile ? 'sticky top-0 flex h-screen items-center overflow-x-visible' : null}>
+    <div className={!isMobile ? 'sticky top-0 flex w-screen h-screen items-center' : null}>
       <motion.div style={!isMobile ? { x } : null} className={`flex gap-7 ${!isMobile ? '' : 'mt-10 flex-wrap justify-center'}`}>
           {projects.map((project, index) => (
             <ProjectCard

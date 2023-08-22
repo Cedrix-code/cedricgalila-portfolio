@@ -3,7 +3,6 @@ import {
   backend,
   api,
   uiux,
-  indev,
   javascript,
   typescript,
   html,
