@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
-import { fadeIn, textVariant, zoomIn, slideIn } from "../utils/motion";
+import { fadeIn, textVariant, slideIn } from "../utils/motion";
 import Typewriter from "typewriter-effect";
-import Resume from "../assets/Lance_Cedric_Galila_Resume.pdf";
+import Resume from "../assets/Lance_Cedric_Galila_Resume.pdf"
 
 const Hero = () => {
 
