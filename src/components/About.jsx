@@ -17,7 +17,7 @@ const useMobileDetection = () => {
     const updateScreenWidth = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-
+   
     updateScreenWidth();
 
     window.addEventListener('resize', updateScreenWidth);
