@@ -12,7 +12,7 @@ import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 
 const ExperienceCard = ({ experience }) => { 
-  const specificExperience = experience.id === 4 ? experiences.find((exp) => exp.id === 4) : null;
+  const specificExperience = experience.id === 5 ? experiences.find((exp) => exp.id === 5) : null;
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   
@@ -34,7 +34,7 @@ const ExperienceCard = ({ experience }) => {
   const titleWords = specificExperience ? specificExperience.title : [];
 
   useEffect(() => {
-    if (experience.id === 4) {
+    if (experience.id === 5) {
       const interval = setInterval(() => {
         setCurrentWordIndex((prevIndex) => (prevIndex + 1) % titleWords.length);
       }, titleWords.length * 800); // Change the time here to control the delay between loops.
@@ -62,7 +62,7 @@ const ExperienceCard = ({ experience }) => {
       }
     >
       <div>
-        {experience.id === 4 ? (
+        {experience.id === 5 ? (
           <h3 className={`text-white font-bold text-${isMobile ? '[20px]' : '[24px]'}`}>
             <Typewriter
               options={{

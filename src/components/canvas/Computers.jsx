@@ -1,23 +1,58 @@
   import { Suspense, useEffect, useState, useRef } from 'react';
-  import { Canvas, useThree } from '@react-three/fiber';
+  import { Canvas, useThree, useFrame } from '@react-three/fiber';
   import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 
   import CanvasLoader from '../Loader';
 
   import useGLTFUnmount from './GLTFUnmount'; // Import the hook from the separate file
+  import * as THREE from 'three';  // Import THREE for using AnimationMixer
 
   const Computers = ({ isMobile, isVisible }) => {
-    const computer = useGLTF('../desktop_pc/scene.gltf')
+    const computer = useGLTF('../catto/scene.gltf');
+    
     const { gl } = useThree(); // Get the gl instance from useThree
-    const scale = isVisible ? (isMobile ? 0.4 : 0.75) : 0; // Scale to 0 when not visible
-    const position = isVisible ? (isMobile ? [0, -2, 0] : [0, -3, 0]) : [0, -1000, 0]; // Move to off-screen when not visible
+    const scale = isVisible ? (isMobile ? 0.8 : 1.4) : 0; // Scale to 0 when not visible
+    const position = isVisible ? (isMobile ? [0, -1, 0] : [0, -2.5, 0.25]) : [0, -1000, 0]; // Move to off-screen when not visible
 
     useGLTFUnmount(isVisible, gl); // Call the hook directly here
+
+    // Set up animation
+    const { scene, animations } = computer;
+    const mixer = useRef();
+
+    useEffect(() => {
+      if (animations && animations.length > 0) {
+        // Initialize the AnimationMixer
+        mixer.current = new THREE.AnimationMixer(scene);
+  
+        // Loop through all animations and play them
+        animations.forEach((clip) => {
+          const action = mixer.current.clipAction(clip);
+          action.setLoop(THREE.LoopRepeat, Infinity); // Loop animation indefinitely
+          action.play(); // Start the animation
+        });
+      }
+  
+      return () => {
+        // Clean up the AnimationMixer on component unmount
+        if (mixer.current) {
+          mixer.current.stopAllAction();
+          mixer.current = null;
+        }
+      };
+    }, [animations, scene]);
+  
+    // Update the mixer on every frame
+    useFrame((state, delta) => {
+      if (mixer.current) {
+        mixer.current.update(delta); // Update the mixer based on the frame delta
+      }
+    });
 
     return (
       <mesh>
         <hemisphereLight intensity={0.15} groundColor="black" />
-        <pointLight intensity={1} />
+        <pointLight intensity={4} />
         <spotLight 
           position={[-60, 40, 10]}
           angle={0.12}
@@ -30,7 +65,7 @@
           object={computer.scene}
           scale={scale}
           position={position}
-          rotation={[-0.01, 0.6, 0]}
+          rotation={[-0.01, 1.4, 0]}
         />
       </mesh>
     );
@@ -87,7 +122,13 @@
             gl={{ preserveDrawingBuffer: true }}
           >
             <Suspense fallback={<CanvasLoader />}>
-              <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2} />
+              <OrbitControls 
+              enableZoom={false} 
+              maxPolarAngle={Math.PI / 2} 
+              minPolarAngle={Math.PI / 2}
+              enablePan={false}
+              target={[0, 0, 0.2]}
+              />
               <Computers isMobile={isMobile} isVisible={isVisible} />
             </Suspense>
             <Preload all />

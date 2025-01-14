@@ -3,7 +3,7 @@ import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 import { fadeIn, textVariant, slideIn } from "../utils/motion";
 import Typewriter from "typewriter-effect";
-import Resume from "../assets/Resume.pdf"
+import Resume from "../assets/LanceCedricGalilaCV.pdf"
 
 const Hero = () => {
 
@@ -38,10 +38,11 @@ const Hero = () => {
                 strings: ['Lance','Cedric','Galila'],
                 autoStart: true,
                 loop: true,
-                delay: 50,
+                delay: 30,
               }}
             />
-          </span></motion.h1>
+          </span>
+          </motion.h1>
           <div>
           <motion.p
             initial="hidden"
@@ -49,8 +50,8 @@ const Hero = () => {
             variants={textVariant(0.5)}
             className={`${styles.heroSubText} mt-2 text-white-100`}
           >
-            The web brought you here, finally! <br className='xs:block hidden' />
-            Let's build ideas with code. <br className='sm:block hidden' />
+            The web have brought you here, finally! <br className='xs:block hidden' />
+            Let's build your ideas through code. <br className='sm:block hidden' />
             One line at a time.
           </motion.p>
           </div>
@@ -76,7 +77,7 @@ const Hero = () => {
 
       <ComputersCanvas />
 
-      <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center z-20 select-none'>
+      <div className='absolute xs:bottom-10 md:bottom-16lg:bottom-32 w-full flex justify-center items-center z-20 select-none'>
         <a href='#about'>
           <div className='w-[30px] h-[54px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>
             <motion.div
