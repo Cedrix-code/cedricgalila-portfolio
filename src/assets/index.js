@@ -27,9 +27,10 @@ import mysql from "./tech/mysql.png";
 import vscode from "./tech/vscode.png"
 
 import future from "./company/future.png";
-import tcs from "./company/tcs.png";
+import bpo from "./company/bpo.png";
 import gsu from "./company/gsu.png";
 import guimaras from "./company/guimaras.png";
+import euroland from "./company/eurolnd.png";
 
 import portfolio from "./portfolio.png";
 import thready from "./thready.png";
@@ -63,7 +64,8 @@ export {
   vscode,
   blender,
   future,
-  tcs,
+  bpo,
+  euroland,
   gsu,
   guimaras,
   portfolio,
