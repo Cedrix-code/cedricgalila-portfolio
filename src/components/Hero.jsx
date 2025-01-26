@@ -3,7 +3,7 @@ import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 import { fadeIn, textVariant, slideIn } from "../utils/motion";
 import Typewriter from "typewriter-effect";
-import Resume from "../assets/LanceCedricGalilaCV.pdf"
+import Resume from "../assets/Lance_Cedric_Galila_SWE.pdf"
 
 const Hero = () => {
 
