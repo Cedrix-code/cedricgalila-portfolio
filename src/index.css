@@ -18,7 +18,6 @@
 body {
   position: relative;
 	line-height: 1.7;
-	background-image: url('./assets/bg-dirt.png');
   background-blend-mode: soft-light;
 	min-height: 100%; /* OPTIONAL */
 }

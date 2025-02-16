@@ -1,4 +1,4 @@
-import { EarthCanvas, ComputersCanvas, StarsCanvas } from './canvas';
+import { EarthCanvas, Lanyard, StarsCanvas } from './canvas';
 import Hero from './Hero';
 import Navbar from './Navbar';
 import About from './About';
@@ -17,7 +17,7 @@ export {
   Works,
   Contact,
   EarthCanvas, 
-  ComputersCanvas, 
+  Lanyard, 
   StarsCanvas,
   Footer
 }

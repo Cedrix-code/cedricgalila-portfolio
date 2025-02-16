@@ -47,8 +47,13 @@ const Navbar = () => {
         }
       };
 
-      const timeoutId = setTimeout(updateActiveLink, 50);
-      return () => clearTimeout(timeoutId);
+      const handleScroll = () => {
+        requestAnimationFrame(updateActiveLink);
+      };
+
+      window.addEventListener('scroll', handleScroll);
+
+      return () => window.removeEventListener('scroll', handleScroll);
     }
   }, [sectionsInView]);
 
@@ -71,11 +76,10 @@ const Navbar = () => {
     <nav
       className={`${
         styles.paddingX
-      } w-full flex-wrap flex items-center py-4 lg:py-5 sm:py-4 xs:py-3  fixed top-0 ${
+      } w-full flex-wrap flex items-center py-4 lg:py-5 sm:py-4 xs:py-3 fixed top-0 ${
         scrolled ? 'z-30 bg-primary backdrop-blur-sm bg-opacity-40' : 'z-30 bg-transparent'
       }`}
     >
-
       <motion.div
         style={{
           scaleX: scrollYProgress,
@@ -90,7 +94,7 @@ const Navbar = () => {
         }}
       ></motion.div>
 
-      <div className="w-full flex-wrap flex justify-between items-center max-w-7xl mx-auto select-none">
+      <div className="w-full flex justify-between items-center max-w-7xl mx-auto px-4">
         <Link
           to="/home"
           spy={true}
@@ -104,29 +108,28 @@ const Navbar = () => {
           <img src={logo} alt="logo" className="w-9 h-9 cursor-pointer object-contain" />
           <p className="text-white text-[18px] font-bold flex ">
             Cedric.Galila &nbsp;
-            <span className="md:block hidden"> | Software Engineer</span>
+            <span className="md:block hidden"> |&nbsp; Software Engineer</span>
           </p>
         </Link>
 
         <ul className="list-none hidden lg:flex flex-row gap-10">
           {navLinks.map((nav) => (
-              <li
-                key={nav.id}
-                className={`${
-                  active === nav.title ? 'text-accent' : 'text-secondary'
-                } hover:text-accent transition-colors text-[18px] font-medium cursor-pointer`}
+            <li
+              key={nav.id}
+              className={`${
+                active === nav.title ? 'text-orange' : 'text-secondary'
+              } hover:text-orange transition-colors text-[18px] font-medium cursor-pointer`}
+            >
+              <Link
+                to={nav.id}
+                spy={true}
+                offset={-50}
+                onSetActive={() => setActive(nav.title)} // Update active link onSetActive
+                onClick={() => handleClick(nav.id)}
               >
-                <Link
-                  to={nav.id}
-                  spy={true}
-                  offset={-50}
-                  onSetActive={() => setActive(nav.title)} // Update active link onSetActive
-                  onClick={() => handleClick(nav.id)}
-                >
-                  {nav.title}
-                </Link>
-              </li>
-
+                {nav.title}
+              </Link>
+            </li>
           ))}
         </ul>
         <MobileMenuToggle toggle={toggle} setToggle={setToggle} active={active} setActive={setActive} />

@@ -1,5 +1,5 @@
 import React from "react";
-import { FaFacebook, FaGithub, FaCoffee, FaLinkedin  } from "react-icons/fa";
+import { FaFacebook, FaGithub, FaLinkedin  } from "react-icons/fa";
 
 import { logo } from "../assets";
 
@@ -14,11 +14,6 @@ const Footer = () => {
       name: "Github",
       icon: <FaGithub />,
       url: "https://github.com/Cedrix-code",
-    },
-    {
-      name: "Instagram",
-      icon: <FaCoffee />,
-      url: "https://www.buymeacoffee.com/cedrix",
     },
     {
       name: "LinkedIn",
